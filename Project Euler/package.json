@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/wizardassassin/Fun-Coding/issues"
   },
-  "homepage": "https://github.com/wizardassassin/Fun-Coding#readme"
+  "homepage": "https://github.com/wizardassassin/Fun-Coding#readme",
+  "type": "module",
+  "dependencies": {
+    "mathjs": "^9.0.0"
+  }
 }
