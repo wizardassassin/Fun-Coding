@@ -17,7 +17,7 @@ export default function problem3(n = 600851475143) {
             prime = 3;
         } else {
             let skip = false;
-            for (let i = 6, end = Math.sqrt(n); i <= end; i += 6) {
+            for (let i = 6, end = Math.sqrt(n) + 1; i <= end; i += 6) {
                 if (n % (i - 1) == 0) {
                     prime = i - 1;
                     skip = true;
