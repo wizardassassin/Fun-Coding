@@ -1,0 +1,2 @@
+# Fun-Coding
+This repository is where I'll be having fun coding. This repository is where I'm going to dump anything I see fun while coding and just do it. Since it's primary for me, it's most likely going to stay private. Who knows.
