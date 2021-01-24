@@ -10,5 +10,5 @@
 //     console.log(problem[i]())
 // }
 
-import debug from './solutions/problem020.js';
-console.log(debug())
+import debug from './solutions/problem021.js';
+console.log(debug());

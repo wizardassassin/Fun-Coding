@@ -10,7 +10,12 @@ NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-
 The use of "and" when writing out numbers is in compliance with British usage.
 
 https://projecteuler.net/problem=17
+
+The preceding problem was taken from Project Euler and is under a Creative Commons Licence:
+Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
+This does not apply to the solution/code.
 */
+
 let a0to19 = [0, 3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8],
     a20to90 = [6, 6, 5, 5, 5, 7, 6, 6],
     a100 = 7,
