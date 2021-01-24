@@ -6,6 +6,10 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 Find the sum of all the multiples of 3 or 5 below 1000.
 
 https://projecteuler.net/problem=1
+
+The preceding problem was taken from Project Euler and is under a Creative Commons Licence:
+Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
+This does not apply to the solution/code.
 */
 
 export default function problem1(n = 1000) {

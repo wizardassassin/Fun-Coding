@@ -29,6 +29,10 @@ const p = (q, r = 3) => {
 // Insert Problem Here
 
 https://projecteuler.net/problem=${q}
+
+The preceding problem was taken from Project Euler and is under a Creative Commons Licence:
+Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
+This does not apply to the solution/code.
 */
 
 export default function problem${q}(n = -1) {
@@ -38,8 +42,8 @@ export default function problem${q}(n = -1) {
     fs.appendFileSync(`./problem${s}.js`, t);
     return 'Done! Problem ' + q;
 };
-for (let i = 12; i <= 50; i++) {
-    // break; // Delete this line for the code to run
+for (let i = 22; i <= 50; i++) {
+    break; // Delete this line for the code to run
     console.log(p(i));
 }
 // ----------------------------------------------------------------------------------

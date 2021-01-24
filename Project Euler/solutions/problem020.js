@@ -9,6 +9,10 @@ and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
 Find the sum of the digits in the number 100!
 
 https://projecteuler.net/problem=20
+
+The preceding problem was taken from Project Euler and is under a Creative Commons Licence:
+Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
+This does not apply to the solution/code.
 */
 
 export default function problem20(n = 100) {

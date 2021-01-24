@@ -6,6 +6,10 @@ A palindromic number reads the same both ways. The largest palindrome made from 
 Find the largest palindrome made from the product of two 3-digit numbers.
 
 https://projecteuler.net/problem=4
+
+The preceding problem was taken from Project Euler and is under a Creative Commons Licence:
+Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
+This does not apply to the solution/code.
 */
 
 export default function problem4(n = 3) {

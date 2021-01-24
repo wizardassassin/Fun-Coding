@@ -6,6 +6,10 @@ By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that 
 What is the 10 001st prime number?
 
 https://projecteuler.net/problem=7
+
+The preceding problem was taken from Project Euler and is under a Creative Commons Licence:
+Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
+This does not apply to the solution/code.
 */
 
 import { isPrime } from 'mathjs'; // Who says I can't cheat?

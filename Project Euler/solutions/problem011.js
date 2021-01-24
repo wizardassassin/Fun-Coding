@@ -29,7 +29,12 @@ The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 
 https://projecteuler.net/problem=11
-*/ // P.S. This problem took way too long for me to code
+
+The preceding problem was taken from Project Euler and is under a Creative Commons Licence:
+Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
+This does not apply to the solution/code.
+*/
+// P.S. This problem took way too long for me to code
 
 let grid =
     `08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
