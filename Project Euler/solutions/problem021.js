@@ -15,6 +15,31 @@ Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
 This does not apply to the solution/code.
 */
 
-export default function problem21(n = -1) {
-    
+export default function problem21(n = 10000) {
+    let acc = 0;
+    for (let i = 1; i < n; i++) {
+        let val1 = 0,
+            val2 = 0;
+        for (let j = 1, end = Math.sqrt(i); j <= end; j++) {
+            if (i % j == 0 && i != j) {
+                val1 += j;
+                let temp = i / j;
+                if (temp != j && temp != i)
+                    val1 += temp;
+            }
+        }
+        if (val1 == i)
+            continue;
+        for (let j = 1, end = Math.sqrt(val1); j <= end; j++) {
+            if (val1 % j == 0 && val1 != j) {
+                val2 += j;
+                let temp = val1 / j;
+                if (temp != j && temp != val1)
+                    val2 += temp;
+            }
+        }
+        if (val2 == i)
+            acc += val1;
+    }
+    return acc;
 }

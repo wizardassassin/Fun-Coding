@@ -22,7 +22,7 @@ export default function problem10(n = 2000000) {
         if (isPrime(i - 1)) {
             sums += i - 1;
         }
-        if (isPrime(i + 1) && (i < n)) {
+        if (isPrime(i + 1) && (i <= n - 1)) {
             sums += i + 1;
         }
     }

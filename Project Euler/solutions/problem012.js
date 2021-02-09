@@ -30,12 +30,15 @@ export default function problem12(n = 500) {
     let factors = 0,
         triangle,
         i = 1;
-    while (factors < 500) {
+    while (factors < n) {
         factors = 0;
         triangle = i * (i + 1) / 2;
-        for (let j = 1, half = Math.sqrt(triangle) + 1; j < half; j++)
+        let half = Math.sqrt(triangle)
+        for (let j = 1; j <= half; j++)
             if (triangle % j == 0)
                 factors += 2;
+        if (Number.isInteger(half))
+            factors--;
         i++;
     }
     return triangle;
