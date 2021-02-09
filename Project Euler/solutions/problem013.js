@@ -210,7 +210,7 @@ let numbers = `37107287533902102798797998220837590246510135740250
 72107838435069186155435662884062257473692284509516
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690`;
+let arr = numbers.split('\n').map(i => BigInt(i));
 export default function problem13(n = 10) {
-    let arr = numbers.split('\n').map(i => BigInt(i));
-    return Number(String(arr.reduce((acc, curr) => acc + curr)).slice(0, 10));
+    return Number(String(arr.reduce((acc, curr) => acc + curr)).slice(0, n));
 }

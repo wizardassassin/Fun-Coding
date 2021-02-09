@@ -21,7 +21,7 @@ let a0to19 = [0, 3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8],
     a100 = 7,
     a1000 = 8,
     and = 3;
-export default function problem17(n = 1000) {
+export default function problem17(n = 1000) { // How do I implement this?
     let len = 0;
     for (let i = 1; i <= 1000; i++) {
         let a = Math.floor((i % 10000) / 1000),

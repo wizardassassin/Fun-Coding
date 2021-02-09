@@ -59,11 +59,11 @@ let grid =
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48`;
 // Arrays ftw
 const my2DArray = [];
+let grids = grid.split('\n')
+for (let i of grids) {
+    my2DArray.push(i.split(' '))
+}
 export default function problem11(n = 4) {
-    let grids = grid.split('\n')
-    for (let i of grids) {
-        my2DArray.push(i.split(' '))
-    }
     let biggest = 0;
     let iLength = my2DArray.length;
     let temp;

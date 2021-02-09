@@ -26,6 +26,7 @@
   "homepage": "https://github.com/wizardassassin/Fun-Coding#readme",
   "type": "module",
   "dependencies": {
+    "lodash": "^4.17.20",
     "mathjs": "^9.0.0"
   }
 }

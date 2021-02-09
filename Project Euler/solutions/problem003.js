@@ -32,6 +32,8 @@ export default function problem3(n = 600851475143) {
                     break;
                 }
             }
+            if (prime > Math.sqrt(n))
+                skip = false;
             if (!skip) {
                 prime = n;
             }
