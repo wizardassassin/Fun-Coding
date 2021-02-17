@@ -23,7 +23,7 @@ export default function problem24(n = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], i = 100000
     gLength = n.length - 1;
     permutation(n);
     permute.sort();
-    return Number(permute[i + 1].join(''));
+    return Number(permute[i - 1].join(''));
 }
 
 function permutation(n, fixed = 0) { // I learned some basic permutations!
