@@ -37,8 +37,7 @@ This does not apply to the solution/code.
 
 export default function problem${q}(n = -1) {
     
-}
-`;
+}`;
     fs.appendFileSync(`./problem${s}.js`, t);
     return 'Done! Problem ' + q;
 };

@@ -43,10 +43,10 @@ export { default as problem033 } from './problem033.js'
 export { default as problem034 } from './problem034.js'
 export { default as problem035 } from './problem035.js'
 export { default as problem036 } from './problem036.js'
-export { default as problem037 } from './problem037.js'/*
+export { default as problem037 } from './problem037.js'
 export { default as problem038 } from './problem038.js'
 export { default as problem039 } from './problem039.js'
-export { default as problem040 } from './problem040.js'
+export { default as problem040 } from './problem040.js'/*
 export { default as problem041 } from './problem041.js'
 export { default as problem042 } from './problem042.js'
 export { default as problem043 } from './problem043.js'
