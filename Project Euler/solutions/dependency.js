@@ -78,6 +78,7 @@ export function truncatable(a, l = true, r = true) {
 }
 
 export function isPrime(a) {
+    if (a < 2) return false;
     for (let i = 2, e = Math.sqrt(a); i <= e; i++)
         if (a % i == 0)
             return false;
@@ -85,18 +86,21 @@ export function isPrime(a) {
 }
 
 export function nextLexicographicPermutation(a) {
-    let pre,
-        cur,
-        ind;
-    for (let i = a.length - 1; i >= 0; i--) {
-        cur = a[i];
-        if (pre > cur) {
-            ind = i;
+    a = String(a);
+    let len = a.length,
+        first,
+        second;
+    for (let s = len - 2; s >= 0; s--) {
+        if (a[s] < a[s + 1]) {
+            first = s;
             break;
         }
-        pre = cur;
     }
-    return a.slice(0, ind) + a[] + a.slice(ind + 1).split('').sort().join('');
+    for (let s = first + 1; s < len; s++)
+        if (a[s] > a[first] && (!second || a[s] < a[second]))
+            second = s;
+    a = swapAt(a, first, second);
+    return a.slice(0, first + 1) + a.slice(first + 1).split('').sort().join('');
 }
 
 export function swapAt(string, index1, index2) {
@@ -109,37 +113,118 @@ export function swapAt(string, index1, index2) {
     return string.slice(0, index1) + string[index2] + string.slice(index1 + 1, index2) + string[index1] + string.slice(index2 + 1);
 }
 
-export class bigFrac {
-    constructor(numerator = 0, denominator = 1) {
-        this.numerator = BigInt(numerator);
-        this.denominator = BigInt(denominator);
-    }
-    arithmetic(operation = "+", numerator = 0, denominator = 1) {
-        switch (operation) {
-            case "+":
-                this.numerator += BigInt(numerator);
-                this.denominator += BigInt(denominator);
-                break;
-            case "-":
+export function wordSum(word) {
+    word = word.toLowerCase();
+    let acc = 0;
+    Array.from(word, (letter) => acc += letter.charCodeAt() - 96); // - 64 if UpperCase. Assumes a = 1
+    return acc;
+}
 
-                break;
-            case "*":
+export function numString(start, end, interval = 1) { // do a num array
+    let acc = "";
+    interval = Math.abs(interval);
+    while (start <= end)
+        acc += start,
+        start += interval;
+    if (acc === "")
+        while (start >= end)
+            acc += start,
+            start -= interval;
+    if (acc === "")
+        acc += start;
+    return acc;
+}
 
-                break;
-            case "/":
-
-                break;
-            case "%":
-
-                break;
-            case "":
-
-                break;
-            case "":
-
-                break;
+export function nextPrime(a) {
+    if (a < 2) return 2;
+    if (a < 3) return 3;
+    let b = nextMultiple(a, 6);
+    if (typeof b === "number")
+        while (true) { // Scary Stuff
+            if (isPrime(b - 1) && b - 1 > a)
+                return b - 1;
+            if (isPrime(b + 1))
+                return b + 1;
+            b += 6;
         }
+    return -1;
+}
 
+export function prevPrime(a) {
+    let b = nextMultiple(a, -6);
+    for (; b >= 6; b -= 6) {
+        if (isPrime(b + 1) && b + 1 < a)
+            return b + 1;
+        if (isPrime(b - 1))
+            return b - 1;
     }
+    if (a > 3) return 3;
+    if (a > 2) return 2;
+    return -1;
+}
 
+export function nextMultiple(a, b) { // Negative b will get the prev multiple
+    return Math.ceil(a / b) * b;
+}
+
+export function primeFactors(a) {
+    if (a < 2)
+        return -1;
+    let arr = [];
+    let fac = 2;
+    while (a > 1) {
+        while (a % fac == 0) {
+            arr.push(fac);
+            a /= fac;
+        }
+        fac = nextPrime(fac);
+    }
+    return arr;
+}
+
+export function distinctPrimeFactors(a) { // Only difference is that it uses a set
+    if (a < 2)
+        return -1;
+    let arr = new Set();
+    let fac = 2;
+    while (a > 1) {
+        while (a % fac == 0) {
+            arr.add(fac);
+            a /= fac;
+        }
+        fac = nextPrime(fac);
+    }
+    return arr;
+}
+
+export function distinctPrimeFactorsSum(a) { // Not a big diff
+    if (a < 2)
+        return -1;
+    let arr = 0;
+    let fac = 2;
+    while (a > 1) {
+        if (a % fac == 0) {
+            do
+                a /= fac;
+            while (a % fac == 0);
+            ++arr;
+        }
+        fac = nextPrime(fac);
+    }
+    return arr;
+}
+
+export function primeFactorsSum(a) { // Not a big diff too
+    if (a < 2)
+        return -1;
+    let arr = 0;
+    let fac = 2;
+    while (a > 1) {
+        while (a % fac == 0) {
+            ++arr;
+            a /= fac;
+        }
+        fac = nextPrime(fac);
+    }
+    return arr;
 }

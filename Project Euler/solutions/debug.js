@@ -14,12 +14,14 @@ const problem = Number(process.argv[2]) || 1, // Problem 0 does not exist
     StartTime = start.toFixed(4) + "ms",
     Output = debug.default(),
     Answer = (Output == answers[Number(Problem) - 1]) ? true : answers[Number(Problem) - 1],
-    Runtime = (performance.now() - start).toFixed(4) + "ms"; // Cool
+    Runtime = (performance.now() - start).toFixed(4) + "ms", // Cool
+    obj = {
+        Problem,
+        StartTime,
+        Output,
+        Answer,
+        Runtime
+    };
 
-console.log({
-    Problem,
-    StartTime,
-    Output,
-    Answer,
-    Runtime
-});
+console.log(obj);
+console.log(Object.getOwnPropertyNames(obj).length, "5");
