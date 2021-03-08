@@ -31,5 +31,5 @@ export default function problem38(n = 9) {
             continue;
         acc = str;
     }
-    return acc;
+    return Number(acc);
 }

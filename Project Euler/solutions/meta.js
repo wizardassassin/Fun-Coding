@@ -41,7 +41,7 @@ export default function problem${q}(n = -1) {
     fs.appendFileSync(`./problem${s}.js`, t);
     return 'Done! Problem ' + q;
 };
-for (let i = 22; i <= 50; i++) {
+for (let i = 51; i <= 100; i++) {
     break; // Delete this line for the code to run
     console.log(p(i));
 }

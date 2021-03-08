@@ -11,3 +11,4 @@ for (let i in problem) {
 }
 console.table(arr);
 console.log(["Problem - 1", "Output", "Answer", "Duration", "Elapsed"]);
+// Try to make this async and use dynamic imports
