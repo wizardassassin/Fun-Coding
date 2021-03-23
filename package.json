@@ -1,24 +1,19 @@
 {
-  "name": "project-euler",
+  "name": "fun-coding",
   "version": "1.0.0",
-  "description": "Node!",
+  "description": "Fun!",
   "main": "index.js",
   "scripts": {
-    "test": "node ."
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wizardassassin/Fun-Coding.git"
   },
   "keywords": [
-    "Fun",
-    "Personal",
-    "Cool",
-    "Epic",
-    "Math",
-    "Code"
+    "Cool"
   ],
-  "author": "wizard_assassin",
+  "author": "Me",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wizardassassin/Fun-Coding/issues"
@@ -26,7 +21,8 @@
   "homepage": "https://github.com/wizardassassin/Fun-Coding#readme",
   "type": "module",
   "dependencies": {
-    "lodash": "^4.17.20",
-    "mathjs": "^9.0.0"
+    "decimal.js": "^10.2.1",
+    "lodash": "^4.17.21",
+    "mathjs": "^9.3.0"
   }
 }
