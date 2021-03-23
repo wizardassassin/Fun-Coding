@@ -19,19 +19,28 @@ This does not apply to the solution/code.
 */
 
 import {
-    nextPrime,
-    prevPrime
+    nextPrime
 } from "./dependency.js";
 
-export default function problem50(n = 1000000) {
+export default function problem50A(n = 1000000) {
     let primeArr = [];
     let b = 2;
+    let longestPrime;
+    let longestPrimeLength = 0;
     while (b < n) {
         primeArr.push(b);
-        n = nextPrime(b);
+        b = nextPrime(b);
     }
-    primeArr.forEach((value, index) => {
-        
-    });
-    return -1;
+    while (primeArr.length > 0) {
+        let prime = primeArr.pop();
+        primeArr.forEach((value, index) => { // Make more efficient
+            let index1 = index;
+            while (value < prime && index1 < primeArr.length - 1)
+                value += primeArr[++index1];
+            if (value == prime && index1 - index + 1 > longestPrimeLength)
+                longestPrime = prime,
+                longestPrimeLength = index1 - index + 1;
+        });
+    }
+    return longestPrime;
 }

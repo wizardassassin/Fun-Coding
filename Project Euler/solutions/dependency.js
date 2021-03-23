@@ -228,3 +228,11 @@ export function primeFactorsSum(a) { // Not a big diff too
     }
     return arr;
 }
+
+export function permutations(n, r) {
+    return factorial(n) / factorial(n - r);
+}
+
+export function combinations(n, r) {
+    return permutations(n, r) / factorial(r);
+}
