@@ -63,11 +63,27 @@ The website or source code is under the WTFPL licence.
 export default function problem54(n = -1) {
     let acc = 0;
     hands.forEach(x => {
-        const player1 = x.slice(0, 14).split(/ +/);
-        const player2 = x.slice(15).split(/ +/);
-        
+        const player1 = x.slice(0, 14);
+        const player2 = x.slice(15);
+        console.log(player1 + ' : ' + player2)
     });
 }
+
+const map = new Map([
+    ['1', 1],
+    ['2', 2],
+    ['3', 3],
+    ['4', 4],
+    ['5', 5],
+    ['6', 6],
+    ['7', 7],
+    ['8', 8],
+    ['9', 9],
+    ['T', 10],
+    ['J', 11],
+    ['Q', 12],
+    ['K', 13],
+]);
 
 // Word wrap again :)
 // Used the Node.js REPL, YAY!
