@@ -15,6 +15,37 @@ Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
 This does not apply to the solution/code.
 */
 
+import {
+    isPrime,
+    nextPrime
+} from "./dependency.js";
+
 export default function problem51(n = 8) {
-    
+    n = 10 - n;
+    let cur = 9;
+    while (true) { // ignoring the "some" portion of the question
+        cur = nextPrime(cur);
+        let str = String(cur);
+        let set = new Set(Array.from(str));
+        for (let x of set) {
+            if (x > n)
+                break;
+            let sAcc = 0;
+            for (let i = x; i < 10; i++)
+                if (!isPrime(str.replaceAll(x, i))) // ignoring the 24 => 04 and similar cases
+                    if (++sAcc > n - x)
+                        break;
+            if (sAcc <= n - x)
+                return cur;
+        }
+    }
 }
+/*
+{
+  Problem: '051',
+  StartTime: '2.7702ms',
+  Output: 121313,
+  Answer: true,
+  Runtime: '62.5611ms'
+}
+*/ // Haha I'm proud of myself. One big run, multiple small code snippet runs.

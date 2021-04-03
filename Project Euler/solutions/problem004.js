@@ -16,7 +16,7 @@ export default function problem4(n = 3) {
     let product = -1;
     n = Number('9'.repeat(n));
     let bottom = (n + 1) / 10;
-    for (let i = n; i >= bottom; i--) {
+    for (let i = n; i >= bottom; i--) { // maybe checking the factors of palindromes would be faster
         for (let ii = n; ii >= bottom; ii--) {
             let temporary = i * ii;
             if (temporary == String(temporary).split('').reverse().join('') && temporary > product) {
