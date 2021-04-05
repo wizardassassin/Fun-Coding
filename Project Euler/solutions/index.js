@@ -1,3 +1,5 @@
+// Depreciated! I no longer use this file!
+
 /*
 Intermediate file that combines all modules together
 If there's a better solution, like using commonjs, let me know

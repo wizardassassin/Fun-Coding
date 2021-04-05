@@ -21,17 +21,37 @@ Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
 This does not apply to the solution/code.
 */
 
-import { distinctPrimeFactorsSum } from "./dependency.js";
+import {
+    nextPrime
+} from "./dependency.js";
 
 export default function problem47(n = 4) { // Scale it to n variables and n prime factors
-    let n1 = 2,
-        n2 = n1 + 1,
-        n3 = n1 + 2,
-        n4 = n1 + 3;
-    while (distinctPrimeFactorsSum(n1) != 4 || distinctPrimeFactorsSum(n2) != 4 || distinctPrimeFactorsSum(n3) != 4 || distinctPrimeFactorsSum(n4) != 4)
-        ++n1,
-        ++n2,
-        ++n3,
-        ++n4;
-    return n1;
+    let n1 = 2;
+    while (true) {
+        if (distinctPrimeFactorsSum(n1 + 3) != 4)
+            n1 += 4;
+        else if (distinctPrimeFactorsSum(n1 + 2) != 4)
+            n1 += 3;
+        else if (distinctPrimeFactorsSum(n1 + 1) != 4)
+            n1 += 2;
+        else if (distinctPrimeFactorsSum(n1) != 4)
+            n1 += 1;
+        else
+            return n1;
+    }
+} // went from 147 seconds to 13 seconds. Yay!
+
+function distinctPrimeFactorsSum(a) { // Not a big diff
+    if (a < 2)
+        return -1;
+    let arr = 0;
+    let fac = 2;
+    while (a > 1) {
+        if (a % fac == 0)
+            arr++;
+        while (a % fac == 0)
+            a /= fac;
+        fac = nextPrime(fac);
+    }
+    return arr;
 }
