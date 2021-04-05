@@ -78,11 +78,23 @@ export function truncatable(a, l = true, r = true) {
 }
 
 export function isPrime(a) {
+    if (a <= 1) return false;
+    if (a == 2 || a == 3) return true;
+
+    if (a % 2 === 0 || a % 3 === 0) return false;
+
+    for (let i = 5, e = Math.sqrt(a); i <= e; i += 6)
+        if (a % i === 0 || a % (i + 2) === 0)
+            return false;
+
+    return true;
+    /*
     if (a < 2) return false;
     for (let i = 2, e = Math.sqrt(a); i <= e; i++)
         if (a % i == 0)
             return false;
     return true;
+    */
 }
 
 export function nextLexicographicPermutation(a) {

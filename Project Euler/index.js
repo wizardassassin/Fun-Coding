@@ -17,11 +17,11 @@ import fs from "fs";
 
 import answers from './solutions/answers.js';
 
-const pool = new WorkerPool(cpus().length);
+const pool = new WorkerPool(cpus().length); // I think this is the thread count and every core gets a thread.
 
 const arr = [];
 
-let max = 60;
+let max = 62;
 let digits = 3;
 
 let StartTime;
@@ -40,6 +40,12 @@ for (let i = 0; i < max; i++) {
             pool.close();
             arr.sort((a, b) => a.Problem - b.Problem);
             fs.writeFileSync('./data.json', JSON.stringify(arr));
+            arr.forEach(x => {
+                if (x.Answer !== true || x.Runtime.slice(0, -2) > 15000 || x.StartTime.slice(0, -2) > 2000) {
+                    x.Fix = (x.Answer !== true) ? 'Wrong Answer! Very Important! Fix!' : 'Try to optimize this code a bit.';
+                    console.log(x);
+                }
+            });
             console.log({
                 StartTime,
                 Runtime: (performance.now() - start).toFixed(4)
