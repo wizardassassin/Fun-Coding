@@ -136,5 +136,8 @@ dist
 *.out
 *.app
 
-# Visual Studio Code Files
+# Data files
+*.dat
+
+# Visual Studio Code files
 .vscode/
