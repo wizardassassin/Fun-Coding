@@ -24,11 +24,11 @@ This does not apply to the solution/code.
 
 import { combinations } from "./dependency.js";
 
-export default function problem53(n = -1) {
+export default function problem53(a = 1000000) {
     let acc = 0;
     for (let n = 1; n <= 100; n++)
         for (let r = 0; r <= n; r++)
-            if (combinations(n, r) > 1000000)
+            if (combinations(n, r) > a)
                 acc++;
     return acc;
 }

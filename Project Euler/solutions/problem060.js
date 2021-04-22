@@ -13,6 +13,6 @@ Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
 This does not apply to the solution/code.
 */
 
-export default function problem60(n = -1) {
+export default function problem60(n = -1) { // Cache primes, check all combinations, repeat
     
 }

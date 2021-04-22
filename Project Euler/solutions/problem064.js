@@ -33,27 +33,49 @@ Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
 This does not apply to the solution/code.
 */
 
+import pkg from 'decimal.js';
+
+const {
+    Decimal
+} = pkg;
+
 export default function problem64(n = 10000) { // Always worried about losing precision when dealing with decimals.
     let acc = 0;
     for (let i = 0; i <= n; i++) {
-        let approx = Math.sqrt(i);
-        if (Number.isInteger(approx)) continue;
-        if (periodApproximation(approx) % 2)
+        let approx = i;
+        if (periodApproximation(approx) % 2) // Extremely inefficient, but works
             acc++;
+        // if (i % 100 == 0)
+        //     console.log('yup', i)
     }
     return acc;
 }
 
-function periodApproximation(n) {
+function periodApproximation(n, p = 100) {
+    p = Math.floor(Math.max(150, n / 30)); // Not that sure how the precision works.
+    Decimal.set({
+        precision: p
+    });
+    const one = new Decimal(1);
+    n = new Decimal(n).sqrt();
+    if (n.isInteger())
+        return 0;
     let arr = new Set();
+    let temp = 0;
     while (true) {
-        let save = String(n).slice(0, 7)
-        n -= Math.floor(n)
+        // console.log(n)
+        if (temp++ > p) {
+            console.error([arr, [p, p / 10], arr.values().next().value ** 2]);
+            throw 'The number of passes exceeded the estimated precision limit.'; // I actually had to use this.
+        }
+        let save = n.toString().slice(0, p / 10);
         if (arr.has(save)) {
             let i = 0;
             for (let x of arr) {
-                if (x == save)
+                if (x == save) {
+                    // console.log(arr)
                     return arr.size - i;
+                }
                 i++;
             }
             console.log('failed')
@@ -63,10 +85,7 @@ function periodApproximation(n) {
             console.log('Not irrational?')
             return arr.size;
         }
-        arr.add(save)
-        n = 1 / n;
+        arr.add(save);
+        n = one.dividedBy(n.minus(n.floor()));
     }
 }
-let thi = [2, 3, 5, 6, 7, 8, 10, 11, 12, 13, 17, 512]
-for (let i of thi)
-    console.log(periodApproximation(Math.sqrt(i)))
