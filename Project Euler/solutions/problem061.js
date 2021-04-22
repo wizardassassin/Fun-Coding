@@ -28,6 +28,84 @@ Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
 This does not apply to the solution/code.
 */
 
-export default function problem61(n = -1) {
+export default function problem61(n = 1000) {
+    let arr = [];
+    for (let i = 0; i < 6; i++) {
+        arr.push(new Map());
+    }
+    let equ1 = [
+        (n) => Math.ceil((Math.sqrt(1 + 8 * n) - 1) / 2),
+        (n) => Math.ceil(Math.sqrt(n)),
+        (n) => Math.ceil((Math.sqrt(1 + 24 * n) + 1) / 6),
+        (n) => Math.ceil((Math.sqrt(1 + 8 * n) + 1) / 4),
+        (n) => Math.ceil((Math.sqrt(2.25 + 10 * n) + 1.5) / 5),
+        (n) => Math.ceil((Math.sqrt(1 + 3 * n) + 1) / 3)
+    ];
+    let equ2 = [
+        (i) => i * (i + 1) / 2,
+        (i) => i * i,
+        (i) => i * (3 * i - 1) / 2,
+        (i) => i * (2 * i - 1),
+        (i) => i * (5 * i - 3) / 2,
+        (i) => i * (3 * i - 2)
+    ];
+    // ignoring key collisions
+    for (let iii = 0; iii < 6; iii++) {
+        for (let i = equ1[iii](n), ii = equ1[iii](n * 10); i < ii; i++) {
+            let a = String(equ2[iii](i)),
+                b = a.slice(0, 2);
+            if (arr[iii].has(b))
+                arr[iii].set(b, [...arr[iii].get(b), a.slice(2)]);
+            else
+                arr[iii].set(b, [a.slice(2)]);
+        }
+    }
+    console.log(arr);
+}
+
+function recursive() {
     
 }
+
+/*
+Math.ceil Math.floor
+Triangle        P_3,n=n(n+1)/2       Math.ceil((Math.sqrt(1 + 8 * y) - 1) / 2)
+Square          P_4,n=n^2            Math.ceil(Math.sqrt(y))
+Pentagonal      P_5,n=n(3n−1)/2      Math.ceil((Math.sqrt(1 + 24 * y) + 1) / 6)
+Hexagonal       P_6,n=n(2n−1)        Math.ceil((Math.sqrt(1 + 8 * y) + 1) / 4)
+Heptagonal      P_7,n=n(5n−3)/2      Math.ceil((Math.sqrt(2.25 + 10 * y) + 1.5) / 5)
+Octagonal       P_8,n=n(3n−2)        Math.ceil((Math.sqrt(1 + 3 * y) + 1) / 3)
+*/
+
+/*
+let tri = new Map();
+let squ = new Map();
+let pen = new Map();
+let hex = new Map();
+let hep = new Map();
+let oct = new Map();
+for (let i = Math.ceil((Math.sqrt(1 + 8 * n) - 1) / 2), ii = Math.ceil((Math.sqrt(1 + 8 * n * 10) - 1) / 2); i < ii; i++) {
+    let a = String(i * (i + 1) / 2);
+    tri.set(a.slice(0, 2), a.slice(2));
+}
+for (let i = Math.ceil(Math.sqrt(n)), ii = Math.ceil(Math.sqrt(n * 10)); i < ii; i++) {
+    let a = String(i * i);
+    squ.set(a.slice(0, 2), a.slice(2));
+}
+for (let i = Math.ceil((Math.sqrt(1 + 24 * n) + 1) / 6), ii = Math.ceil((Math.sqrt(1 + 24 * n * 10) + 1) / 6); i < ii; i++) {
+    let a = String(i * (3 * i - 1) / 2);
+    pen.set(a.slice(0, 2), a.slice(2));
+}
+for (let i = Math.ceil((Math.sqrt(1 + 8 * n) + 1) / 4), ii = Math.ceil((Math.sqrt(1 + 8 * n * 10) + 1) / 4); i < ii; i++) {
+    let a = String(i * (2 * i - 1));
+    hex.set(a.slice(0, 2), a.slice(2));
+}
+for (let i = Math.ceil((Math.sqrt(2.25 + 10 * n) + 1.5) / 5), ii = Math.ceil((Math.sqrt(2.25 + 10 * n * 10) + 1.5) / 5); i < ii; i++) {
+    let a = String(i * (5 * i - 3) / 2);
+    hep.set(a.slice(0, 2), a.slice(2));
+}
+for (let i = Math.ceil((Math.sqrt(1 + 3 * n) + 1) / 3), ii = Math.ceil((Math.sqrt(1 + 3 * n * 10) + 1) / 3); i < ii; i++) {
+    let a = String(i * (3 * i - 2));
+    oct.set(a.slice(0, 2), a.slice(2));
+}
+*/

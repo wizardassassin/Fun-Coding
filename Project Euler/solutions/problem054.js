@@ -63,26 +63,73 @@ The website or source code is under the WTFPL licence.
 export default function problem54(n = -1) {
     let acc = 0;
     hands.forEach(x => {
-        const player1 = x.slice(0, 14);
-        const player2 = x.slice(15);
+        const player1 = x.slice(0, 14).split(' ');
+        const player2 = x.slice(15).split(' ');
+        console.log(strength(player1), strength(player2))
         console.log(player1 + ' : ' + player2)
     });
 }
 
-const map = new Map([
-    ['1', 1],
-    ['2', 2],
-    ['3', 3],
-    ['4', 4],
-    ['5', 5],
-    ['6', 6],
-    ['7', 7],
-    ['8', 8],
-    ['9', 9],
-    ['T', 10],
-    ['J', 11],
-    ['Q', 12],
-    ['K', 13],
+function strength(c) {
+    let state = getState(c);
+}
+
+function getState(c) {
+    let consecutive = 0,
+        suit = 1,
+        kind,
+        kindH,
+        high;
+    let s = c[0][1];
+    let t = true;
+    for (let i = 0; i < 6; i++) {
+        if (t && c[i][1] != s) {
+            suit = 0;
+            t = false;
+        }
+        c[i] = map1[c[i][0]];
+    }
+    let max = Math.max(...c);
+    consecutive = max;
+    c = new Set(c);
+    for (let i of c) {
+        if (!c.has(i)) {
+            suit = false;
+            break;
+        }
+    }
+
+}
+
+const map1 = new Map([
+    ['2', 1],
+    ['3', 2],
+    ['4', 3],
+    ['5', 4],
+    ['6', 5],
+    ['7', 6],
+    ['8', 7],
+    ['9', 8],
+    ['T', 9],
+    ['J', 10],
+    ['Q', 11],
+    ['K', 12],
+    ['A', 13],
+]);
+const map2 = new Map([
+    [1, '2'],
+    [2, '3'],
+    [3, '4'],
+    [4, '5'],
+    [5, '6'],
+    [6, '7'],
+    [7, '8'],
+    [8, '9'],
+    [9, 'T'],
+    [10, 'J'],
+    [11, 'Q'],
+    [12, 'K'],
+    [13, 'A'],
 ]);
 
 // Word wrap again :)

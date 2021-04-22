@@ -21,7 +21,7 @@ const pool = new WorkerPool(cpus().length); // I think this is the thread count 
 
 const arr = [];
 
-let max = 62;
+let max = 64;
 let digits = 3;
 
 let StartTime;
@@ -48,7 +48,8 @@ for (let i = 0; i < max; i++) {
             });
             console.log({
                 StartTime,
-                Runtime: (performance.now() - start).toFixed(4)
+                Runtime: (performance.now() - start).toFixed(4),
+                Threads: cpus().length
             });
         }
     });
