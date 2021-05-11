@@ -24,8 +24,8 @@ int main() {
         aVector[term]++;
     }
     cout << endl;
-    for (auto const& x : aMap) {
-        cout << x.first << ":" << x.second << "," << aVector[x.first] << " ";
+    for (auto const& [key, value] : aMap) {
+        cout << key << ":" << value << "," << aVector[key] << " ";
     }
     cout << endl;
     int i = 0;

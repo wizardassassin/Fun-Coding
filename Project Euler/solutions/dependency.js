@@ -248,3 +248,38 @@ export function permutations(n, r) {
 export function combinations(n, r) {
     return permutations(n, r) / factorial(r);
 }
+
+export function primeSieve(n) {
+    const vect = Array(n + 1).fill(false);
+    const primes = Array();
+    let p = 2,
+        nn = Math.sqrt(n);
+    while (p <= nn) {
+        if (vect[p] == false) {
+            primes.push(p);
+            for (let i = p ** 2; i <= n; i += p)
+                vect[i] = true;
+        }
+        p++;
+    }
+    while (p <= n) {
+        if (vect[p] == false)
+            primes.push(p);
+        p++;
+    }
+    return primes;
+}
+
+export function totientSieve(n) {
+    let phi = [...Array(n + 1).keys()];
+    let p = 2;
+    while (p <= n) {
+        if (phi[p] == p) {
+            phi[p] = p - 1;
+            for (let i = p * 2; i <= n; i += p)
+                phi[i] *= (p - 1) / p;
+        }
+        p++;
+    }
+    return phi;
+}

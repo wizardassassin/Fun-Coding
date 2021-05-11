@@ -21,7 +21,7 @@ const pool = new WorkerPool(cpus().length); // I think this is the thread count 
 
 const arr = [];
 
-let max = 64;
+let max = 67;
 let digits = 3;
 
 let StartTime;
@@ -41,7 +41,7 @@ for (let i = 0; i < max; i++) {
             arr.sort((a, b) => a.Problem - b.Problem);
             fs.writeFileSync('./data.json', JSON.stringify(arr));
             arr.forEach(x => {
-                if (x.Answer !== true || x.Runtime.slice(0, -2) > 15000 || x.StartTime.slice(0, -2) > 2000) {
+                if (x.Answer !== true || x.Runtime.slice(0, -2) > 15000 || x.StartTime.slice(0, -2) > 3000) {
                     x.Fix = (x.Answer !== true) ? 'Wrong Answer! Very Important! Fix!' : 'Try to optimize this code a bit.';
                     console.log(x);
                 }

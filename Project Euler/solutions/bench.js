@@ -8,16 +8,56 @@ import {
     isPrime
 } from "mathjs";
 
-function test1(num) {
-    return num == num.split('').reverse().join('');
+import {
+    primeSieve
+} from "./dependency.js";
+let primes = primeSieve(1000000);
+
+function test1(n) {
+    let acc = 1;
+    let i = 0;
+    let j = primes[i];
+    while (j <= n) {
+        if (n % j == 0)
+            acc *= 1 - 1 / j;
+        j = primes[++i];
+    }
+    return n * acc;
 }
 
-function test2(num) {
-    return num === num.split('').reverse().join('');
+function test2(a) {
+    let acc = 1;
+    let i = a;
+    let j = 0;
+    let fac;
+    while (a > 1) {
+        fac = primes[j++];
+        if (a % fac == 0) {
+            acc *= 1 - 1 / fac;
+            do {
+                a /= fac;
+            } while (a % fac == 0);
+        }
+    }
+    return i * acc;
 }
 
-function test3(num) {
-    return num.slice(0, Math.floor(num.length / 2)) == num.slice(Math.floor(num.length / 2)).split('').reverse().join('');
+function test3(a) {
+    // let primes = primeSieve(a);
+    let acc = 1;
+    let i = a;
+    let j = 0;
+    let fac = primes[j];
+    while (a > 1) {
+        if (a % fac == 0) {
+            acc *= 1 - 1 / fac;
+            do {
+                a /= fac;
+            } while (a % fac == 0);
+        }
+        fac = primes[++j];
+    }
+    return i * acc;
 }
 
 let start, stop, result;
@@ -42,7 +82,7 @@ console.log('sanity check')
 
 int1 = int1.map(String)
 
-for (let int of int1) {
+for (let int = 2; int < 1000000; int++) { // let int of int1
     start = performance.now();
     result = test1(int)
     dump.a += result

@@ -61,6 +61,7 @@ The website or source code is under the WTFPL licence.
 */
 
 export default function problem54(n = -1) {
+    return;
     let acc = 0;
     hands.forEach(x => {
         const player1 = x.slice(0, 14).split(' ');
