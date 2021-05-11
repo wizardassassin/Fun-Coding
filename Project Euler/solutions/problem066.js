@@ -28,6 +28,30 @@ Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
 This does not apply to the solution/code.
 */
 
-export default function problem66(D = 1000) {
-    
+import pkg from 'decimal.js';
+
+const {
+    Decimal
+} = pkg;
+
+export default function problem66(d = 1000) {
+    let acc;
+    for (let i = 660; i <= 665; i++) {
+        if (Number.isInteger(Math.sqrt(i)))
+            continue;
+        let x = 2;
+        Decimal.pow(x, 2).minus(1).dividedBy(i).sqrt().isInteger()
+        while (!Decimal.pow(x, 2).minus(1).dividedBy(i).sqrt().isInteger()) {
+            if (x % 100000 == 0)
+                console.log(x)
+            x++;
+        }
+        console.log(x, i)
+    }
+    return acc;
 }
+
+/*
+x^2 – Dy^2 = 1
+
+*/

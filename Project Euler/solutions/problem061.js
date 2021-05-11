@@ -49,7 +49,7 @@ export default function problem61(n = 1000) {
         (i) => i * (5 * i - 3) / 2,
         (i) => i * (3 * i - 2)
     ];
-    // ignoring key collisions
+    // ignoring key collisions [might be faster]
     for (let iii = 0; iii < 6; iii++) {
         for (let i = equ1[iii](n), ii = equ1[iii](n * 10); i < ii; i++) {
             let a = String(equ2[iii](i)),
@@ -60,12 +60,35 @@ export default function problem61(n = 1000) {
                 arr[iii].set(b, [a.slice(2)]);
         }
     }
-    console.log(arr);
+    // console.log(arr);
+    let sol;
+    for (let [key, val] of arr.pop()) {
+        for (let val2 of val)
+            recursive(arr, [key, val2]);
+    }
+
+    function recursive(maps = [], path = []) {
+        let val3 = path[path.length - 1];
+        if (maps.length == 0) {
+            if (path[0] == val3)
+                sol = path;
+            return;
+        }
+        for (let i = 0, ii = maps.length; i < ii; i++) {
+            if (maps[i].has(val3))
+                for (let j of maps[i].get(val3))
+                    recursive(maps.slice(0, i).concat(maps.slice(i + 1, ii)), path.concat(j));
+        }
+    }
+
+    let acc = 0;
+    for (let i = 0, ii = sol.length - 1; i < ii; i++) {
+        acc += Number(sol[i] + sol[i + 1]);
+    }
+    return acc;
 }
 
-function recursive() {
-    
-}
+
 
 /*
 Math.ceil Math.floor

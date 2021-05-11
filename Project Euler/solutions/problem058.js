@@ -24,6 +24,20 @@ Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
 This does not apply to the solution/code.
 */
 
-export default function problem58(n = -1) {
-    
+import {
+    isPrime
+} from "./dependency.js";
+
+export default function problem58(n = 0.1) {
+    let br = 1;
+    let num = 0,
+        den = 1;
+    do {
+        br += 2;
+        for (let i = br ** 2, ii = 0; ii < 4;ii++, i -= br - 1)
+        if (isPrime(i))
+            num++;
+        den += 4;
+    } while (num / den > n);
+    return br;
 }
