@@ -1,68 +1,42 @@
+import {
+    permutation,
+    heapPermutation
+} from "../solutions/dependency.js";
 
+const getPermutations = arr => {
 
+    const output = [];
 
+    const swapInPlace = (arrToSwap, indexA, indexB) => {
+        const temp = arrToSwap[indexA];
+        arrToSwap[indexA] = arrToSwap[indexB];
+        arrToSwap[indexB] = temp;
+    };
 
-
-function getState(c) {
-    let consecutive = 0,
-        suit = 1,
-        kind,
-        kindH,
-        high;
-    let s = c[0][1];
-    for (let i = 0; i < 5; i++) {
-        if (c[i][1] != s) {
-            suit = 0;
-            break;
+    const generate = (n, heapArr) => {
+        if (n === 1) {
+            output.push(heapArr.slice());
+            return;
         }
-    }
-    
-    for (let i = 0; i < 5; i++) {
-        c[i] = map1.get(c[i][0])
-    }
-    console.log(c)
-    let max = Math.max(...c);
-    consecutive = max;
-    c = new Set(c);
-    while (consecutive - max-- < 4) {
-        if (!c.has(max)) {
-            consecutive = 0;
-            break;
+
+        generate(n - 1, heapArr);
+
+        for (let i = 0; i < n - 1; i++) {
+            if (n % 2 === 0) {
+                swapInPlace(heapArr, i, n - 1);
+            } else {
+                swapInPlace(heapArr, 0, n - 1);
+            }
+
+            generate(n - 1, heapArr);
         }
-    }
-    console.log(c, {consecutive, suit, kind, kindH, high})
-}
+    };
 
-const map1 = new Map([
-    ['2', 1],
-    ['3', 2],
-    ['4', 3],
-    ['5', 4],
-    ['6', 5],
-    ['7', 6],
-    ['8', 7],
-    ['9', 8],
-    ['T', 9],
-    ['J', 10],
-    ['Q', 11],
-    ['K', 12],
-    ['A', 13],
-]);
+    generate(arr.length, arr.slice());
 
-const map2 = new Map([ 
-    ['1', '2'],
-    ['2', '3'],
-    ['3', '4'],
-    ['4', '5'],
-    ['5', '6'],
-    ['6', '7'],
-    ['7', '8'],
-    ['8', '9'],
-    ['9', 'T'],
-    ['10', 'J'],
-    ['11', 'Q'],
-    ['12', 'K'],
-    ['13', 'A'],
-]);
+    return output;
+};
 
-getState(["8C", "TC", "JC", "9C", "7H"])
+const arr = [1, 2, 3, 4, 5, 6];
+
+console.log(permutation(arr), heapPermutation(arr), getPermutations(arr));

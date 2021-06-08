@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export function factorial(n) {
     let ret = 1n;
     n = BigInt(n);
@@ -6,26 +8,26 @@ export function factorial(n) {
     return ret;
 }
 
-let permute;
 export function permutation(n, fixed = 0) {
-    permute = [];
-    Permutation(n, fixed);
+    let permute = [];
+    let gLength = n.length - 1;
+    (function Permutation(n, fixed = 0) { // I learned some basic permutations!
+        if (fixed >= gLength) {
+            permute.push(n);
+        } else {
+            for (let i = fixed; i <= gLength; i++) {
+                let temp = _.cloneDeep(n);
+                let a = temp[i];
+                temp[i] = temp[fixed];
+                temp[fixed] = a;
+                Permutation(temp, fixed + 1);
+            }
+        }
+    })(n, fixed); // Instead of finding all permutations, just find them in order! It would be O(n) instead of O(n!)
     return permute;
 }
 
-function Permutation(n, fixed = 0) { // I learned some basic permutations!
-    if (fixed >= gLength) {
-        permute.push(n);
-    } else {
-        for (let i = fixed; i <= gLength; i++) {
-            let temp = _.cloneDeep(n);
-            let a = temp[i];
-            temp[i] = temp[fixed];
-            temp[fixed] = a;
-            Permutation(temp, fixed + 1);
-        }
-    }
-} // Instead of finding all permutations, just find them in order! It would be O(n) instead of O(n!)
+
 
 export function fullReptendPrime(n) { // Using the work of google and big brain
     let arr = Array.from({
@@ -282,4 +284,52 @@ export function totientSieve(n) {
         p++;
     }
     return phi;
+}
+
+export function arraySwapAtDirt(array, a, b) {
+    const temp = array[a];
+    array[a] = array[b];
+    array[b] = temp;
+}
+
+export function arraySwapAt(array, a, b) {
+    const deep = _.cloneDeep(array);
+    const temp = deep[a];
+    deep[a] = deep[b];
+    deep[b] = temp;
+    return deep;
+}
+
+export function heapPermutation(arr) {
+    const out = [];
+    (function gen(n, genArr) {
+        if (n === 1) {
+            out.push(_.clone(genArr));
+            return;
+        }
+        gen(n - 1, genArr);
+        for (let i = 0; i < n - 1; i++) {
+            arraySwapAtDirt(genArr, (n % 2 === 0) ? i : 0, n - 1);
+            gen(n - 1, genArr);
+        }
+    })(arr.length, _.clone(arr));
+    return out;
+}
+
+export function infiniteContinuedFraction(i) {
+    let sqrt = Math.sqrt(i);
+    if (Number.isInteger(sqrt))
+        return [];
+    let m = 0;
+    let d = 1;
+    let a = Math.floor(sqrt);
+    let list = [a];
+    let a2 = a * 2;
+    do {
+        m = d * a - m;
+        d = (i - m ** 2) / d;
+        a = Math.floor((sqrt + m) / d);
+        list.push(a);
+    } while (a != a2);
+    return list;
 }

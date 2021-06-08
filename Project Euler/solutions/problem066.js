@@ -28,27 +28,41 @@ Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
 This does not apply to the solution/code.
 */
 
-import pkg from 'decimal.js';
+import {
+    infiniteContinuedFraction
+} from "./dependency.js";
 
-const {
-    Decimal
-} = pkg;
-
-export default function problem66(d = 1000) {
-    let acc;
-    for (let i = 660; i <= 665; i++) {
-        if (Number.isInteger(Math.sqrt(i)))
+export default function problem66(d = 1000n) {
+    let val;
+    let acc = 0n;
+    for (let i = 0n; i <= d; i++) {
+        let list = infiniteContinuedFraction(Number(i)).map(BigInt);
+        if (list.length == 0n)
             continue;
-        let x = 2;
-        Decimal.pow(x, 2).minus(1).dividedBy(i).sqrt().isInteger()
-        while (!Decimal.pow(x, 2).minus(1).dividedBy(i).sqrt().isInteger()) {
-            if (x % 100000 == 0)
-                console.log(x)
-            x++;
+        let init = list.shift();
+        let h2 = 0n;
+        let h1 = 1n;
+        let h = init * h1 + h2;
+        let k2 = 1n;
+        let k1 = 0n;
+        let k = init * k1 + k2;
+        let j = 0n;
+        let len = BigInt(list.length);
+        while (h ** 2n - i * k ** 2n != 1n) {
+            h2 = h1;
+            h1 = h;
+            h = list[j] * h1 + h2;
+            k2 = k1;
+            k1 = k;
+            k = list[j] * k1 + k2;
+            j = (j + 1n) % len;
         }
-        console.log(x, i)
+        if (h > acc) {
+            acc = h;
+            val = i;
+        }
     }
-    return acc;
+    return Number(val);
 }
 
 /*
