@@ -23,7 +23,7 @@ import {
 } from "./dependency.js";
 
 
-export default function problem70(n = 8319823) {
+export default function problem70(n = 10000000) {
     let sieve = totientSieve(n);
     let acc,
         val = 10,

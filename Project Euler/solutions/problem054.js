@@ -61,45 +61,141 @@ The website or source code is under the WTFPL licence.
 */
 
 export default function problem54(n = -1) {
-    return;
     let acc = 0;
-    hands.forEach(x => {
+    for (let x of hands) {
         const player1 = x.slice(0, 14).split(' ');
         const player2 = x.slice(15).split(' ');
-        console.log(strength(player1), strength(player2))
-        console.log(player1 + ' : ' + player2)
-    });
-}
+        if (strength(player1, player2))
+            acc++;
+        // console.log(player1 + ' : ' + player2)
+    };
+    return acc;
+} // I probably approached this problem the hard way
 
-function strength(c) {
-    let state = getState(c);
+function strength(player1, player2) {
+    const state1 = getState(player1);
+    const state2 = getState(player2);
+    if (state1.suit && state1.consecutive > state2.consecutive)
+        return true;
+    if (state2.suit && state2.consecutive > state1.consecutive)
+        return false;
+
+    if (state1.same == 4 && (state2.same != 4 || state1.pair[0][0] > state2.pair[0][0]))
+        return true;
+    if (state2.same == 4 && (state1.same != 4 || state2.pair[0][0] > state1.pair[0][0]))
+        return false;
+
+    if ((state1.same == 3 && state1.pair.length == 2) && ((state2.same != 3 || state2.pair.length != 2) || state1.pair[0][0] > state2.pair[0][0]))
+        return true;
+    if ((state2.same == 3 && state2.pair.length == 2) && ((state1.same != 3 || state1.pair.length != 2) || state2.pair[0][0] > state1.pair[0][0]))
+        return false;
+
+    if (state1.suit == 1)
+        return true;
+    if (state2.suit == 1)
+        return false;
+
+    if (state1.consecutive)
+        return true;
+    if (state2.consecutive)
+        return false;
+
+    if (state1.same == 3 && (state2.same != 3 || state1.pair[0][0] > state2.pair[0][0]))
+        return true;
+    if (state2.same == 3 && (state1.same != 3 || state2.pair[0][0] > state1.pair[0][0]))
+        return false;
+
+    if ((state1.same == 2 && state1.pair.length == 2) && ((state2.same != 2 || state2.pair.length != 2) || state1.pair[1][0] > state2.pair[1][0]))
+        return true;
+    if ((state2.same == 2 && state2.pair.length == 2) && ((state1.same != 2 || state1.pair.length != 2) || state2.pair[1][0] > state1.pair[1][0]))
+        return false;
+
+    if (state1.same == 2 && (state2.same != 2 || state1.pair[0][0] > state2.pair[0][0]))
+        return true;
+    if (state2.same == 2 && (state1.same != 2 || state2.pair[0][0] > state1.pair[0][0]))
+        return false;
+
+    for (let i = 0, ii = state1.high.length; i < ii; i++) {
+        if (state1.high[i] == state2.high[i]) {
+            console.log('yes')
+            continue;
+        }
+        if (state1.high[i] > state2.high[i])
+            return true;
+        if (state2.high[i] > state1.high[i])
+            return false;
+    }
+
+    console.log(state1);
+    console.log(state2);
+    throw new Error('Error');
 }
 
 function getState(c) {
     let consecutive = 0,
         suit = 1,
-        kind,
-        kindH,
-        high;
+        pair = [],
+        high = [],
+        same = 1;
     let s = c[0][1];
-    let t = true;
-    for (let i = 0; i < 6; i++) {
-        if (t && c[i][1] != s) {
+    for (let i = 0; i < 5; i++) {
+        if (c[i][1] != s) {
             suit = 0;
-            t = false;
-        }
-        c[i] = map1[c[i][0]];
-    }
-    let max = Math.max(...c);
-    consecutive = max;
-    c = new Set(c);
-    for (let i of c) {
-        if (!c.has(i)) {
-            suit = false;
             break;
         }
     }
 
+    for (let i = 0, ii = c.length; i < ii; i++) {
+        c[i] = map1.get(c[i][0])
+    }
+    // console.log(c)
+
+    let max = Math.max(...c);
+    consecutive = max;
+    let cc = new Set(c);
+    while (consecutive - max-- < 4) {
+        if (!cc.has(max)) {
+            consecutive = 0;
+            break;
+        }
+    }
+
+    if (!consecutive) {
+        let count = Array(14).fill(0);
+        for (let i of c) {
+            count[i]++;
+        }
+        // console.log(count)
+        for (let i = 0, ii = count.length; i < ii; i++) {
+            let a = count[i];
+            if (a > 1) {
+                same = Math.max(same, a);
+                if (a != 3)
+                    pair.push([i, a]);
+                else
+                    pair.unshift([i, a]);
+            } else if (a == 1) {
+                high.unshift(i);
+            }
+        }
+    }
+
+
+    // console.log(c, cc, {
+    //     consecutive,
+    //     suit,
+    //     pair,
+    //     same,
+    //     high
+    // })
+
+    return {
+        consecutive,
+        suit,
+        pair,
+        same,
+        high
+    };
 }
 
 const map1 = new Map([
@@ -117,20 +213,21 @@ const map1 = new Map([
     ['K', 12],
     ['A', 13],
 ]);
+
 const map2 = new Map([
-    [1, '2'],
-    [2, '3'],
-    [3, '4'],
-    [4, '5'],
-    [5, '6'],
-    [6, '7'],
-    [7, '8'],
-    [8, '9'],
-    [9, 'T'],
-    [10, 'J'],
-    [11, 'Q'],
-    [12, 'K'],
-    [13, 'A'],
+    ['1', '2'],
+    ['2', '3'],
+    ['3', '4'],
+    ['4', '5'],
+    ['5', '6'],
+    ['6', '7'],
+    ['7', '8'],
+    ['8', '9'],
+    ['9', 'T'],
+    ['10', 'J'],
+    ['11', 'Q'],
+    ['12', 'K'],
+    ['13', 'A'],
 ]);
 
 // Word wrap again :)

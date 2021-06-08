@@ -33,13 +33,34 @@ Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
 This does not apply to the solution/code.
 */
 
-import pkg from 'decimal.js';
+export default function problem64(n = 10000) {
+    let acc = 0;
+    for (let i = 0; i < n; i++)
+        if ((continuedFraction(i).length - 1) % 2 == 1)
+            acc++;
+    return acc;
+}
 
-const {
-    Decimal
-} = pkg;
+function continuedFraction(i) {
+    let sqrt = Math.sqrt(i);
+    if (Number.isInteger(sqrt))
+        return [];
+    let m = 0;
+    let d = 1;
+    let a = Math.floor(sqrt);
+    let list = [a];
+    let a2 = a * 2;
+    do {
+        m = d * a - m;
+        d = (i - m ** 2) / d;
+        a = Math.floor((sqrt + m) / d);
+        list.push(a);
+    } while (a != a2);
+    return list;
+}
 
-export default function problem64(n = 10000) { // Always worried about losing precision when dealing with decimals.
+/*
+{ // Always worried about losing precision when dealing with decimals.
     let acc = 0;
     for (let i = 0; i <= n; i++) {
         let approx = i;
@@ -89,3 +110,4 @@ function periodApproximation(n, p = 100) {
         n = one.dividedBy(n.minus(n.floor()));
     }
 }
+*/

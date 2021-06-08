@@ -21,7 +21,7 @@ const pool = new WorkerPool(cpus().length); // I think this is the thread count 
 
 const arr = [];
 
-let max = 67;
+let max = 70;
 let digits = 3;
 
 let StartTime;
