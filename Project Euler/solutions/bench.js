@@ -13,51 +13,23 @@ import {
 } from "./dependency.js";
 let primes = primeSieve(1000000);
 
-function test1(n) {
-    let acc = 1;
-    let i = 0;
-    let j = primes[i];
-    while (j <= n) {
-        if (n % j == 0)
-            acc *= 1 - 1 / j;
-        j = primes[++i];
+function test1(a, b) {
+    while (b != 0) {
+        let t = b;
+        b = a % b;
+        a = t;
     }
-    return n * acc;
+    return a;
 }
 
-function test2(a) {
-    let acc = 1;
-    let i = a;
-    let j = 0;
-    let fac;
-    while (a > 1) {
-        fac = primes[j++];
-        if (a % fac == 0) {
-            acc *= 1 - 1 / fac;
-            do {
-                a /= fac;
-            } while (a % fac == 0);
-        }
-    }
-    return i * acc;
+function test2(a, b) {
+    return b;
 }
 
-function test3(a) {
-    // let primes = primeSieve(a);
-    let acc = 1;
-    let i = a;
-    let j = 0;
-    let fac = primes[j];
-    while (a > 1) {
-        if (a % fac == 0) {
-            acc *= 1 - 1 / fac;
-            do {
-                a /= fac;
-            } while (a % fac == 0);
-        }
-        fac = primes[++j];
-    }
-    return i * acc;
+function test3(a, b) {
+    if (b == 0)
+        return a;
+    return test3(b, a % b);
 }
 
 let start, stop, result;
@@ -80,25 +52,32 @@ let int1 = [1000000016531, 1000000010201, 1000000006021, 1000000005707, 10000000
 
 console.log('sanity check')
 
-int1 = int1.map(String)
+console.log(int1.length)
 
-for (let int = 2; int < 1000000; int++) { // let int of int1
+int1 = int1.slice(0, 4)
+
+for (let start = 0, end = int1.length - 1; start < end; start++, end--) { // let int of int1
+
+    let int = int1[start];
+    let int2 = int1[end];
+    int = Math.max(int, int2);
+    int2 = Math.min(int, int2);
     start = performance.now();
-    result = test1(int)
+    result = test1(int, int2)
     dump.a += result
     stop = performance.now() - start;
     // console.log(result, stop, '1')
     acc.a += stop
 
     start = performance.now();
-    result = test2(int)
+    result = test2(int, int2)
     dump.b += result
     stop = performance.now() - start;
     // console.log(result, stop, '2')
     acc.b += stop
 
     start = performance.now();
-    result = test3(int)
+    result = test3(int, int2)
     dump.c += result
     stop = performance.now() - start;
     // console.log(result, stop, '3')

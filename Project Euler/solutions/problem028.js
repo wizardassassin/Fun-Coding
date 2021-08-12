@@ -10,6 +10,9 @@ Starting with the number 1 and moving to the right in a clockwise direction a 5 
 17 16 15 14 13
 
 It can be verified that the sum of the numbers on the diagonals is 101.
+
+What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed in the same way?
+
 https://projecteuler.net/problem=28
 
 The preceding problem was taken from Project Euler and is under a Creative Commons Licence:
