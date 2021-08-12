@@ -43,13 +43,19 @@ export function primeLength(a, b) {
     return n;
 }
 
-export function gcd(a, b) { // Euclid's algorithm??
-    if (b == 0)
-        return a;
-    return gcd(b, a % b); // a mod b = a - b * Math.floor(a / b);
+export function gcd(a, b) {
+    while (b != 0)
+        [a, b] = [b, a % b];
+    return a;
 }
 
-export function lcd(a, b) { // some formula
+// { // Euclid's algorithm??
+//     if (b == 0)
+//         return a;
+//     return gcd(b, a % b); // a mod b = a - b * Math.floor(a / b);
+// }
+
+export function lcm(a, b) { // some formula
     return Math.abs(a * b) / gcd(a, b);
 }
 
@@ -333,3 +339,7 @@ export function infiniteContinuedFraction(i) {
     } while (a != a2);
     return list;
 }
+
+/*
+DO: https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula
+*/
