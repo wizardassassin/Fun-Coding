@@ -340,6 +340,44 @@ export function infiniteContinuedFraction(i) {
     return list;
 }
 
+export function patritionSieve(n) {
+    let strip1 = new Array(n);
+    let strip2 = new Array();
+    let i = 0;
+    let k = 1;
+    strip2[i] = (k * (3 * k - 1)) / 2;
+    while (strip2[i] < n) {
+        k = -k;
+        strip2[i + 1] = (k * (3 * k - 1)) / 2;
+        k = -k + 1;
+        strip2[i + 2] = (k * (3 * k - 1)) / 2;
+        i += 2;
+    }
+    strip1[0] = 1n;
+    for (let i = 1; i < n; i++) {
+        let val = 0n;
+        let j;
+        let k = 0;
+        j = strip2[k++];
+        while (j <= i) {
+            if (Math.floor((k - 1) / 2) % 2 == 0) val += strip1[i - j];
+            else val -= strip1[i - j];
+            j = strip2[k++];
+        }
+        strip1[i] = val;
+    }
+    return strip1;
+}
+
+export function digitSum(n) {
+    let sum = 0;
+    while (n) {
+        sum += Number(n[0]);
+        n = n.slice(1);
+    }
+    return sum;
+}
+
 /*
 DO: https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula
 */

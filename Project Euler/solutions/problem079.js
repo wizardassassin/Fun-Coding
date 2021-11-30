@@ -15,7 +15,25 @@ This does not apply to the solution/code.
 */
 
 export default function problem79(n = -1) {
-    
+    // Assuming that no numbers in the password repeat
+    const before = Array.from({ length: 10 }, (_, i) => new Set());
+    const after = Array.from({ length: 10 }, (_, i) => new Set());
+    const attempts = keyLog.split("\n");
+    for (let attempt of attempts) {
+        const [a, b, c] = attempt.split("");
+        after[a].add(b).add(c);
+        after[b].add(c);
+        before[c].add(b).add(a);
+        before[b].add(a);
+    }
+    const after2 = after
+        .map((x, i) => [i, x.size])
+        .filter(([x, a]) => a || before[x].size > 0);
+    after2.sort(([, a], [, b]) => b - a);
+    // console.log(after2);
+    // console.log(before);
+    // console.log(after);
+    return Number(after2.reduce((a, [b]) => a + b, ""));
 }
 
 const keyLog = `319
