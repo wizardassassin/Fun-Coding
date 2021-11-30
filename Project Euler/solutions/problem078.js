@@ -19,6 +19,8 @@ Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
 This does not apply to the solution/code.
 */
 
-export default function problem78(n = -1) {
-    
+import { patritionSieve } from "./dependency.js";
+
+export default function problem78(n = 100000) { // Arbitrary limit
+    return patritionSieve(n).findIndex((x) => x % 1000000n == 0n);
 }

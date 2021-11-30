@@ -14,6 +14,25 @@ Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
 This does not apply to the solution/code.
 */
 
-export default function problem80(n = -1) {
-    
+import Decimal from "decimal.js";
+
+import { digitSum } from "./dependency.js";
+
+Decimal.set({ precision: 110 });
+
+export default function problem80(n = 100) {
+    let acc = 0;
+    for (let i = 1; i <= 100; i++) {
+        if (Number.isInteger(Math.sqrt(i))) {
+            continue;
+        }
+        let sqrt = new Decimal(i).sqrt().toString();
+        let index = sqrt.indexOf(".");
+        sqrt = sqrt.slice(0, index) + sqrt.slice(index + 1);
+        // sqrt = sqrt.slice(sqrt.indexOf(".") + 1);
+        sqrt = sqrt.slice(0, 100);
+        // console.log(sqrt);
+        acc += digitSum(sqrt);
+    }
+    return acc;
 }
