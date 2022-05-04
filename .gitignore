@@ -165,3 +165,7 @@ hs_err_pid*
 
 # Visual Studio Code files
 .vscode/
+
+# Test files
+.test/
+.test.*

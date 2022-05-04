@@ -69,5 +69,5 @@ export default function problem93(n = 10) {
             }
         }
     }
-    return ret;
+    return Number(ret);
 }

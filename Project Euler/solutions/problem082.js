@@ -19,8 +19,23 @@ Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
 This does not apply to the solution/code.
 */
 
+import _ from "lodash";
+
 export default function problem82(n = -1) {
-    
+    const matrix = matrix2.split("\n").map((x) => x.split(",").map(Number));
+    const row = matrix.length;
+    const col = matrix[0].length;
+    const value = _.cloneDeep(matrix);
+    for (let j = col - 2; j >= 0; j--) {
+        value[0][j] += value[0][j + 1];
+        for (let i = 1; i < row; i++) {
+            value[i][j] += Math.min(value[i - 1][j], value[i][j + 1]);
+        }
+        for (let i = row - 2; i >= 0; i--) {
+            value[i][j] = Math.min(value[i][j], matrix[i][j] + value[i + 1][j]);
+        }
+    }
+    return value.reduce((a, b) => Math.min(a, b[0]), Infinity);
 }
 
 const matrix2 = `4445,2697,5115,718,2209,2212,654,4348,3079,6821,7668,3276,8874,4190,3785,2752,9473,7817,9137,496,7338,3434,7152,4355,4552,7917,7827,2460,2350,691,3514,5880,3145,7633,7199,3783,5066,7487,3285,1084,8985,760,872,8609,8051,1134,9536,5750,9716,9371,7619,5617,275,9721,2997,2698,1887,8825,6372,3014,2113,7122,7050,6775,5948,2758,1219,3539,348,7989,2735,9862,1263,8089,6401,9462,3168,2758,3748,5870

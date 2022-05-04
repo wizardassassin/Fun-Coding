@@ -1,14 +1,17 @@
 #include <bits/stdc++.h>
 
-#pragma GCC optimize("Ofast")
-#pragma GCC target("avx,avx2,fma")
-#pragma GCC optimization("unroll-loops")
-
 using namespace std;
 
 void solve() {
-    
-    cout << 0;
+    int n, m;
+    cin >> n >> m;
+    int s = 0;
+    while (n--) {
+        int t;
+        cin >> t;
+        s += t;
+    }
+    cout << s % m;
 }
 
 int main() {
