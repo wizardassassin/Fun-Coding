@@ -378,6 +378,102 @@ export function digitSum(n) {
     return sum;
 }
 
+export function properDivisors(n) {
+    let arr = [];
+    if (n == 1)
+        return arr;
+    arr.push(1);
+    let d = 2;
+    let root = Math.sqrt(n);
+    while (d < root) {
+        if (n % d == 0)
+            arr.push(d);
+        d++;
+    }
+    let i = arr.length - 1;
+    if (Number.isInteger(root))
+        arr.push(root);
+    while (i > 0) {
+        arr.push(n / arr[i]);
+        i--;
+    }
+    return arr;
+}
+
+export function properDivisorsSum(n) {
+    let sum = 0;
+    if (n == 1)
+        return sum;
+    sum += 1;
+    let d = 2;
+    let root = Math.sqrt(n);
+    while (d < root) {
+        if (n % d == 0)
+            sum += d + n / d;
+        d++;
+    }
+    if (Number.isInteger(root))
+        sum += root;
+    return sum;
+}
+
+// 9 by 9 2d array
+export function sudokuSolver(grid) {
+    let gridClone = _.cloneDeep(grid);
+    let size = 9;
+    let len = size ** 2;
+    let pointer = 0;
+    let prev = 1;
+    while (pointer < len) {
+        let i = pointer % 9;
+        let j = Math.floor(pointer / 9);
+        if (grid[i][j] != 0) {
+            pointer += prev;
+            continue;
+        }
+        
+        do {
+            gridClone[i][j]++;
+        } while (gridClone[i][j] != 10 && !validSudokuGrid(gridClone, i, j));
+
+        if (gridClone[i][j] == 10) {
+            gridClone[i][j] = 0;
+            prev = -1;
+            pointer--;
+        } else {
+            prev = 1;
+            pointer++;
+        }
+    }
+    return gridClone;
+}
+
+export function validSudokuGrid(grid, i, j) {
+    let v = grid[i][j];
+    let k = Math.floor(i / 3) * 3;
+    let l = Math.floor(j / 3) * 3;
+    let m = k + 3;
+    let n = l + 3;
+    for (let a = k; a < m; a++) {
+        for (let b = l; b < n; b++) {
+            if (grid[a][b] == v && a != i && b != j) {
+                return false;
+            }
+        }
+    }
+    for (let a = 0; a < 9; a++) {
+        if (grid[a][j] == v && a != i) {
+            return false;
+        }
+    }
+    for (let b = 0; b < 9; b++) {
+        if (grid[i][b] == v && b != j) {
+            return false;
+        }
+    }
+    return true;
+}
+
 /*
 DO: https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula
 */

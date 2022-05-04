@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 
-#pragma GCC optimize("Ofast")
-
 using namespace std;
+
+set<int> values;
 
 int main() {
     ios::sync_with_stdio(0);
@@ -10,5 +10,13 @@ int main() {
 
     int n;
     cin >> n;
+
+    while (n--) {
+        int t;
+        cin >> t;
+        values.insert(t);
+    }
+
+    cout << values.size();
     
 }
