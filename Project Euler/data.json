@@ -1,1 +1,795 @@
-[{"Problem":"001","StartTime":"1.9723ms","Output":233168,"Answer":true,"Runtime":"0.0731ms","threadId":8},{"Problem":"002","StartTime":"3.3102ms","Output":4613732,"Answer":true,"Runtime":"0.0671ms","threadId":7},{"Problem":"003","StartTime":"1.3367ms","Output":6857,"Answer":true,"Runtime":"0.1146ms","threadId":6},{"Problem":"004","StartTime":"1.4446ms","Output":906609,"Answer":true,"Runtime":"401.5397ms","threadId":5},{"Problem":"005","StartTime":"2304.7838ms","Output":232792560,"Answer":true,"Runtime":"0.5489ms","threadId":4},{"Problem":"006","StartTime":"2444.1802ms","Output":25164150,"Answer":true,"Runtime":"0.3308ms","threadId":3},{"Problem":"007","StartTime":"2370.4283ms","Output":104743,"Answer":true,"Runtime":"48.5573ms","threadId":2},{"Problem":"008","StartTime":"2.2722ms","Output":23514624000,"Answer":true,"Runtime":"0.8725ms","threadId":1},{"Problem":"009","StartTime":"1.2688ms","Output":31875000,"Answer":true,"Runtime":"3.5313ms","threadId":6},{"Problem":"010","StartTime":"2355.6374ms","Output":142913828922,"Answer":true,"Runtime":"291.1801ms","threadId":1},{"Problem":"011","StartTime":"3.7464ms","Output":70600674,"Answer":true,"Runtime":"1.6263ms","threadId":7},{"Problem":"012","StartTime":"0.9078ms","Output":76576500,"Answer":true,"Runtime":"182.0430ms","threadId":6},{"Problem":"013","StartTime":"6.6328ms","Output":5537376230,"Answer":true,"Runtime":"0.0631ms","threadId":8},{"Problem":"014","StartTime":"2.1415ms","Output":837799,"Answer":true,"Runtime":"1381.8158ms","threadId":7},{"Problem":"015","StartTime":"2456.1241ms","Output":137846528820,"Answer":true,"Runtime":"0.2137ms","threadId":8},{"Problem":"016","StartTime":"1.0120ms","Output":1366,"Answer":true,"Runtime":"0.1171ms","threadId":6},{"Problem":"017","StartTime":"1.0202ms","Output":21124,"Answer":true,"Runtime":"0.3529ms","threadId":6},{"Problem":"018","StartTime":"1.0732ms","Output":1074,"Answer":true,"Runtime":"0.1528ms","threadId":6},{"Problem":"019","StartTime":"1.0945ms","Output":171,"Answer":true,"Runtime":"0.1419ms","threadId":6},{"Problem":"020","StartTime":"1.8347ms","Output":648,"Answer":true,"Runtime":"0.3612ms","threadId":6},{"Problem":"021","StartTime":"1.1686ms","Output":31626,"Answer":true,"Runtime":"7.2365ms","threadId":6},{"Problem":"022","StartTime":"2.9476ms","Output":871198282,"Answer":true,"Runtime":"3.5726ms","threadId":6},{"Problem":"023","StartTime":"1.2293ms","Output":4179871,"Answer":true,"Runtime":"482.5463ms","threadId":6},{"Problem":"024","StartTime":"690.2442ms","Output":2783915460,"Answer":true,"Runtime":"23196.8969ms","threadId":5},{"Problem":"025","StartTime":"351.4130ms","Output":4782,"Answer":true,"Runtime":"1.4204ms","threadId":6},{"Problem":"026","StartTime":"1.0481ms","Output":983,"Answer":true,"Runtime":"67.5816ms","threadId":6},{"Problem":"027","StartTime":"1809.4217ms","Output":-59231,"Answer":true,"Runtime":"126.5344ms","threadId":6},{"Problem":"028","StartTime":"421.7001ms","Output":669171001,"Answer":true,"Runtime":"0.0508ms","threadId":7},{"Problem":"029","StartTime":"6.2553ms","Output":9183,"Answer":true,"Runtime":"90.9177ms","threadId":7},{"Problem":"030","StartTime":"3.7248ms","Output":443839,"Answer":true,"Runtime":"938.6376ms","threadId":7},{"Problem":"031","StartTime":"1.2400ms","Output":73682,"Answer":true,"Runtime":"6797.1707ms","threadId":4},{"Problem":"032","StartTime":"7.8614ms","Output":45228,"Answer":true,"Runtime":"434.9323ms","threadId":2},{"Problem":"033","StartTime":"6.3859ms","Output":100,"Answer":true,"Runtime":"10.0595ms","threadId":3},{"Problem":"034","StartTime":"28.9762ms","Output":40730,"Answer":true,"Runtime":"10929.4038ms","threadId":3},{"Problem":"035","StartTime":"3.6154ms","Output":55,"Answer":true,"Runtime":"171.0718ms","threadId":8},{"Problem":"036","StartTime":"0.9958ms","Output":872187,"Answer":true,"Runtime":"40.8489ms","threadId":1},{"Problem":"037","StartTime":"2.6180ms","Output":748317,"Answer":true,"Runtime":"102.1476ms","threadId":8},{"Problem":"038","StartTime":"1.0474ms","Output":932718654,"Answer":true,"Runtime":"8.3620ms","threadId":1},{"Problem":"039","StartTime":"0.9936ms","Output":840,"Answer":true,"Runtime":"4.7702ms","threadId":1},{"Problem":"040","StartTime":"0.8734ms","Output":210,"Answer":true,"Runtime":"15.1497ms","threadId":1},{"Problem":"041","StartTime":"20.0669ms","Output":7652413,"Answer":true,"Runtime":"375.5120ms","threadId":1},{"Problem":"042","StartTime":"2.9948ms","Output":162,"Answer":true,"Runtime":"2.4082ms","threadId":8},{"Problem":"043","StartTime":"35.1797ms","Output":16695334890,"Answer":true,"Runtime":"2267.7067ms","threadId":8},{"Problem":"044","StartTime":"3.3131ms","Output":5482660,"Answer":true,"Runtime":"23089.2369ms","threadId":2},{"Problem":"045","StartTime":"20.1694ms","Output":1533776805,"Answer":true,"Runtime":"3.3931ms","threadId":7},{"Problem":"046","StartTime":"28.7868ms","Output":5777,"Answer":true,"Runtime":"3.5148ms","threadId":7},{"Problem":"047","StartTime":"1.9535ms","Output":134043,"Answer":true,"Runtime":"15813.4471ms","threadId":7},{"Problem":"048","StartTime":"1.0333ms","Output":9110846700,"Answer":true,"Runtime":"20.7075ms","threadId":6},{"Problem":"049","StartTime":"21.3319ms","Output":296962999629,"Answer":true,"Runtime":"8.8505ms","threadId":6},{"Problem":"050","StartTime":"4.6283ms","Output":997651,"Answer":true,"Runtime":"35607.9667ms","threadId":1},{"Problem":"051","StartTime":"1.1300ms","Output":121313,"Answer":true,"Runtime":"37.3601ms","threadId":6},{"Problem":"052","StartTime":"0.9297ms","Output":142857,"Answer":true,"Runtime":"790.2667ms","threadId":6},{"Problem":"053","StartTime":"1.1354ms","Output":4075,"Answer":true,"Runtime":"100.1217ms","threadId":6},{"Problem":"054","StartTime":"1.4283ms","Output":376,"Answer":true,"Runtime":"7.2804ms","threadId":6},{"Problem":"055","StartTime":"0.9844ms","Output":249,"Answer":true,"Runtime":"49.6816ms","threadId":6},{"Problem":"056","StartTime":"1.0083ms","Output":972,"Answer":true,"Runtime":"27.3606ms","threadId":6},{"Problem":"057","StartTime":"5.9719ms","Output":153,"Answer":true,"Runtime":"6.0871ms","threadId":6},{"Problem":"058","StartTime":"3.3573ms","Output":26241,"Answer":true,"Runtime":"503.6262ms","threadId":6},{"Problem":"059","StartTime":"1.2608ms","Output":129448,"Answer":true,"Runtime":"247.3245ms","threadId":6},{"Problem":"060","StartTime":"4.2908ms","Output":26033,"Answer":true,"Runtime":"60059.3188ms","threadId":6},{"Problem":"061","StartTime":"1.2699ms","Output":28684,"Answer":true,"Runtime":"2.8856ms","threadId":8},{"Problem":"062","StartTime":"1.3249ms","Output":127035954683,"Answer":true,"Runtime":"163.6387ms","threadId":8},{"Problem":"063","StartTime":"0.9779ms","Output":49,"Answer":true,"Runtime":"0.0701ms","threadId":8},{"Problem":"064","StartTime":"0.9793ms","Output":1322,"Answer":true,"Runtime":"8.7013ms","threadId":8},{"Problem":"065","StartTime":"0.8594ms","Output":272,"Answer":true,"Runtime":"0.1379ms","threadId":8},{"Problem":"066","StartTime":"1.5040ms","Output":661,"Answer":true,"Runtime":"20.1046ms","threadId":8},{"Problem":"067","StartTime":"1.4735ms","Output":7273,"Answer":true,"Runtime":"1.0713ms","threadId":8},{"Problem":"068","StartTime":"0.9920ms","Output":6531031914842725,"Answer":true,"Runtime":"1040.1736ms","threadId":8},{"Problem":"069","StartTime":"1.1013ms","Output":510510,"Answer":true,"Runtime":"20994.5942ms","threadId":8},{"Problem":"070","StartTime":"16.6845ms","Output":8319823,"Answer":true,"Runtime":"2454.2637ms","threadId":4},{"Problem":"071","StartTime":"0.8701ms","Output":428570,"Answer":true,"Runtime":"0.0597ms","threadId":4},{"Problem":"072","StartTime":"0.9727ms","Output":303963552391,"Answer":true,"Runtime":"89.8160ms","threadId":4},{"Problem":"073","StartTime":"0.8890ms","Output":7295372,"Answer":true,"Runtime":"81.2788ms","threadId":4},{"Problem":"074","StartTime":"4.3704ms","Output":402,"Answer":true,"Runtime":"5048.4432ms","threadId":4},{"Problem":"075","StartTime":"21.3573ms","Output":161667,"Answer":true,"Runtime":"62.4794ms","threadId":3},{"Problem":"076","StartTime":"0.9222ms","Output":190569291,"Answer":true,"Runtime":"0.2973ms","threadId":3},{"Problem":"077","StartTime":"1.3085ms","Output":71,"Answer":true,"Runtime":"4.6695ms","threadId":3},{"Problem":"078","StartTime":"1.3462ms","Output":55374,"Answer":true,"Runtime":"2368.7189ms","threadId":3},{"Problem":"079","StartTime":"0.9155ms","Output":73162890,"Answer":true,"Runtime":"0.4052ms","threadId":3},{"Problem":"080","StartTime":"4.0989ms","Output":40886,"Answer":true,"Runtime":"27.0361ms","threadId":3},{"Problem":"081","StartTime":"1.1573ms","Output":427337,"Answer":true,"Runtime":"7.3385ms","threadId":3},{"Problem":"082","StartTime":"1.1424ms","Answer":"260324","Runtime":"0.0361ms","threadId":3},{"Problem":"083","StartTime":"0.7933ms","Answer":"425185","Runtime":"0.0305ms","threadId":3},{"Problem":"084","StartTime":"0.8036ms","Answer":"101524","Runtime":"0.0295ms","threadId":3},{"Problem":"085","StartTime":"0.9821ms","Output":2772,"Answer":true,"Runtime":"0.4345ms","threadId":3},{"Problem":"086","StartTime":"1.1474ms","Answer":"1818","Runtime":"0.0500ms","threadId":3},{"Problem":"087","StartTime":"0.9207ms","Output":1097343,"Answer":true,"Runtime":"12685.7142ms","threadId":3},{"Problem":"088","StartTime":"0.8460ms","Answer":"7587457","Runtime":"0.0410ms","threadId":4},{"Problem":"089","StartTime":"0.9149ms","Answer":"743","Runtime":"0.0480ms","threadId":4},{"Problem":"090","StartTime":"0.8700ms","Answer":"1217","Runtime":"0.0282ms","threadId":4},{"Problem":"091","StartTime":"0.7325ms","Output":14234,"Answer":true,"Runtime":"67.1036ms","threadId":4},{"Problem":"092","StartTime":"0.7741ms","Output":8581146,"Answer":true,"Runtime":"5793.1965ms","threadId":4},{"Problem":"093","StartTime":"1.1520ms","Output":"1258","Answer":true,"Runtime":"36.1189ms","threadId":7},{"Problem":"094","StartTime":"1.1595ms","Answer":"518408346","Runtime":"0.0511ms","threadId":7},{"Problem":"095","StartTime":"1.3536ms","Output":14316,"Answer":true,"Runtime":"3771.7367ms","threadId":7},{"Problem":"096","StartTime":"7.0762ms","Answer":"24702","Runtime":"0.0366ms","threadId":7},{"Problem":"097","StartTime":"1.1845ms","Answer":"8739992577","Runtime":"0.0495ms","threadId":7},{"Problem":"098","StartTime":"3.0717ms","Answer":"18769","Runtime":"0.0334ms","threadId":7},{"Problem":"099","StartTime":"1.0807ms","Answer":"709","Runtime":"0.0306ms","threadId":7},{"Problem":"100","StartTime":"1.4501ms","Answer":"756872327473","Runtime":"0.2388ms","threadId":7}]
+[
+    {
+        "Problem": "001",
+        "StartTime": "2.3585ms",
+        "Output": 233168,
+        "Answer": true,
+        "Runtime": "0.1460ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "002",
+        "StartTime": "4.1980ms",
+        "Output": 4613732,
+        "Answer": true,
+        "Runtime": "0.1751ms",
+        "threadId": 7
+    },
+    {
+        "Problem": "003",
+        "StartTime": "2.1474ms",
+        "Output": 6857,
+        "Answer": true,
+        "Runtime": "0.3535ms",
+        "threadId": 6
+    },
+    {
+        "Problem": "004",
+        "StartTime": "1.3983ms",
+        "Output": 906609,
+        "Answer": true,
+        "Runtime": "443.6970ms",
+        "threadId": 5
+    },
+    {
+        "Problem": "005",
+        "StartTime": "1242.0271ms",
+        "Output": 232792560,
+        "Answer": true,
+        "Runtime": "0.3888ms",
+        "threadId": 4
+    },
+    {
+        "Problem": "006",
+        "StartTime": "1267.2660ms",
+        "Output": 25164150,
+        "Answer": true,
+        "Runtime": "0.3083ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "007",
+        "StartTime": "1439.1693ms",
+        "Output": 104743,
+        "Answer": true,
+        "Runtime": "20.4312ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "008",
+        "StartTime": "1.5769ms",
+        "Output": 23514624000,
+        "Answer": true,
+        "Runtime": "1.1635ms",
+        "threadId": 1
+    },
+    {
+        "Problem": "009",
+        "StartTime": "5.6599ms",
+        "Output": 31875000,
+        "Answer": true,
+        "Runtime": "4.7286ms",
+        "threadId": 6
+    },
+    {
+        "Problem": "010",
+        "StartTime": "1361.4828ms",
+        "Output": 142913828922,
+        "Answer": true,
+        "Runtime": "251.8815ms",
+        "threadId": 1
+    },
+    {
+        "Problem": "011",
+        "StartTime": "8.6844ms",
+        "Output": 70600674,
+        "Answer": true,
+        "Runtime": "0.7826ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "012",
+        "StartTime": "2.1558ms",
+        "Output": 76576500,
+        "Answer": true,
+        "Runtime": "203.3373ms",
+        "threadId": 7
+    },
+    {
+        "Problem": "013",
+        "StartTime": "1.5770ms",
+        "Output": 5537376230,
+        "Answer": true,
+        "Runtime": "0.0701ms",
+        "threadId": 6
+    },
+    {
+        "Problem": "014",
+        "StartTime": "1.0901ms",
+        "Output": 837799,
+        "Answer": true,
+        "Runtime": "1563.2331ms",
+        "threadId": 6
+    },
+    {
+        "Problem": "015",
+        "StartTime": "1463.3493ms",
+        "Output": 137846528820,
+        "Answer": true,
+        "Runtime": "0.1737ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "016",
+        "StartTime": "1.3755ms",
+        "Output": 1366,
+        "Answer": true,
+        "Runtime": "0.1041ms",
+        "threadId": 7
+    },
+    {
+        "Problem": "017",
+        "StartTime": "2.2966ms",
+        "Output": 21124,
+        "Answer": true,
+        "Runtime": "0.3577ms",
+        "threadId": 7
+    },
+    {
+        "Problem": "018",
+        "StartTime": "1.3875ms",
+        "Output": 1074,
+        "Answer": true,
+        "Runtime": "0.1497ms",
+        "threadId": 7
+    },
+    {
+        "Problem": "019",
+        "StartTime": "6.9469ms",
+        "Output": 171,
+        "Answer": true,
+        "Runtime": "0.4169ms",
+        "threadId": 7
+    },
+    {
+        "Problem": "020",
+        "StartTime": "8.2784ms",
+        "Output": 648,
+        "Answer": true,
+        "Runtime": "0.2712ms",
+        "threadId": 7
+    },
+    {
+        "Problem": "021",
+        "StartTime": "6.8573ms",
+        "Output": 31626,
+        "Answer": true,
+        "Runtime": "15.1898ms",
+        "threadId": 7
+    },
+    {
+        "Problem": "022",
+        "StartTime": "7.2563ms",
+        "Output": 871198282,
+        "Answer": true,
+        "Runtime": "3.9432ms",
+        "threadId": 7
+    },
+    {
+        "Problem": "023",
+        "StartTime": "3.5040ms",
+        "Output": 4179871,
+        "Answer": true,
+        "Runtime": "418.6889ms",
+        "threadId": 7
+    },
+    {
+        "Problem": "024",
+        "StartTime": "23.9023ms",
+        "Output": 2783915460,
+        "Answer": true,
+        "Runtime": "21652.9287ms",
+        "threadId": 5
+    },
+    {
+        "Problem": "025",
+        "StartTime": "5.8683ms",
+        "Output": 4782,
+        "Answer": true,
+        "Runtime": "1.5879ms",
+        "threadId": 7
+    },
+    {
+        "Problem": "026",
+        "StartTime": "2.8074ms",
+        "Output": 983,
+        "Answer": true,
+        "Runtime": "63.0321ms",
+        "threadId": 7
+    },
+    {
+        "Problem": "027",
+        "StartTime": "1320.0928ms",
+        "Output": -59231,
+        "Answer": true,
+        "Runtime": "100.2112ms",
+        "threadId": 7
+    },
+    {
+        "Problem": "028",
+        "StartTime": "1.4464ms",
+        "Output": 669171001,
+        "Answer": true,
+        "Runtime": "0.0508ms",
+        "threadId": 4
+    },
+    {
+        "Problem": "029",
+        "StartTime": "2.9970ms",
+        "Output": 9183,
+        "Answer": true,
+        "Runtime": "60.3385ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "030",
+        "StartTime": "5.0341ms",
+        "Output": 443839,
+        "Answer": true,
+        "Runtime": "732.0529ms",
+        "threadId": 4
+    },
+    {
+        "Problem": "031",
+        "StartTime": "0.7588ms",
+        "Output": 73682,
+        "Answer": true,
+        "Runtime": "6301.3880ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "032",
+        "StartTime": "1.0943ms",
+        "Output": 45228,
+        "Answer": true,
+        "Runtime": "392.9393ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "033",
+        "StartTime": "0.8350ms",
+        "Output": 100,
+        "Answer": true,
+        "Runtime": "2.7532ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "034",
+        "StartTime": "2.5589ms",
+        "Output": 40730,
+        "Answer": true,
+        "Runtime": "9849.1448ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "035",
+        "StartTime": "1240.8282ms",
+        "Output": 55,
+        "Answer": true,
+        "Runtime": "130.4736ms",
+        "threadId": 6
+    },
+    {
+        "Problem": "036",
+        "StartTime": "0.7509ms",
+        "Output": 872187,
+        "Answer": true,
+        "Runtime": "44.0529ms",
+        "threadId": 1
+    },
+    {
+        "Problem": "037",
+        "StartTime": "2.6031ms",
+        "Output": 748317,
+        "Answer": true,
+        "Runtime": "86.0955ms",
+        "threadId": 1
+    },
+    {
+        "Problem": "038",
+        "StartTime": "4.2635ms",
+        "Output": 932718654,
+        "Answer": true,
+        "Runtime": "9.5069ms",
+        "threadId": 1
+    },
+    {
+        "Problem": "039",
+        "StartTime": "0.7207ms",
+        "Output": 840,
+        "Answer": true,
+        "Runtime": "4.6978ms",
+        "threadId": 1
+    },
+    {
+        "Problem": "040",
+        "StartTime": "0.7586ms",
+        "Output": 210,
+        "Answer": true,
+        "Runtime": "12.0968ms",
+        "threadId": 1
+    },
+    {
+        "Problem": "041",
+        "StartTime": "21.1692ms",
+        "Output": 7652413,
+        "Answer": true,
+        "Runtime": "318.2046ms",
+        "threadId": 1
+    },
+    {
+        "Problem": "042",
+        "StartTime": "3.7062ms",
+        "Output": 162,
+        "Answer": true,
+        "Runtime": "2.0906ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "043",
+        "StartTime": "21.8875ms",
+        "Output": 16695334890,
+        "Answer": true,
+        "Runtime": "1779.7467ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "044",
+        "StartTime": "8.2297ms",
+        "Output": 5482660,
+        "Answer": true,
+        "Runtime": "21950.3115ms",
+        "threadId": 4
+    },
+    {
+        "Problem": "045",
+        "StartTime": "10.7926ms",
+        "Output": 1533776805,
+        "Answer": true,
+        "Runtime": "3.5386ms",
+        "threadId": 1
+    },
+    {
+        "Problem": "046",
+        "StartTime": "4.6037ms",
+        "Output": 5777,
+        "Answer": true,
+        "Runtime": "3.7242ms",
+        "threadId": 1
+    },
+    {
+        "Problem": "047",
+        "StartTime": "1.5852ms",
+        "Output": 134043,
+        "Answer": true,
+        "Runtime": "15768.1095ms",
+        "threadId": 1
+    },
+    {
+        "Problem": "048",
+        "StartTime": "1.0501ms",
+        "Output": 9110846700,
+        "Answer": true,
+        "Runtime": "18.9103ms",
+        "threadId": 7
+    },
+    {
+        "Problem": "049",
+        "StartTime": "22.5110ms",
+        "Output": 296962999629,
+        "Answer": true,
+        "Runtime": "15.2857ms",
+        "threadId": 7
+    },
+    {
+        "Problem": "050",
+        "StartTime": "1.3276ms",
+        "Output": 997651,
+        "Answer": true,
+        "Runtime": "34979.3009ms",
+        "threadId": 7
+    },
+    {
+        "Problem": "051",
+        "StartTime": "18.1047ms",
+        "Output": 121313,
+        "Answer": true,
+        "Runtime": "30.7541ms",
+        "threadId": 6
+    },
+    {
+        "Problem": "052",
+        "StartTime": "2.9633ms",
+        "Output": 142857,
+        "Answer": true,
+        "Runtime": "596.1736ms",
+        "threadId": 6
+    },
+    {
+        "Problem": "053",
+        "StartTime": "3.8685ms",
+        "Output": 4075,
+        "Answer": true,
+        "Runtime": "103.6810ms",
+        "threadId": 6
+    },
+    {
+        "Problem": "054",
+        "StartTime": "3.5860ms",
+        "Output": 376,
+        "Answer": true,
+        "Runtime": "7.6442ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "055",
+        "StartTime": "3.2986ms",
+        "Output": 249,
+        "Answer": true,
+        "Runtime": "50.4313ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "056",
+        "StartTime": "0.9107ms",
+        "Output": 972,
+        "Answer": true,
+        "Runtime": "28.7473ms",
+        "threadId": 6
+    },
+    {
+        "Problem": "057",
+        "StartTime": "0.8056ms",
+        "Output": 153,
+        "Answer": true,
+        "Runtime": "4.5245ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "058",
+        "StartTime": "2.3549ms",
+        "Output": 26241,
+        "Answer": true,
+        "Runtime": "231.8907ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "059",
+        "StartTime": "1.0488ms",
+        "Output": 129448,
+        "Answer": true,
+        "Runtime": "202.4454ms",
+        "threadId": 6
+    },
+    {
+        "Problem": "060",
+        "StartTime": "3.6410ms",
+        "Output": 26033,
+        "Answer": true,
+        "Runtime": "28839.2517ms",
+        "threadId": 6
+    },
+    {
+        "Problem": "061",
+        "StartTime": "0.8987ms",
+        "Output": 28684,
+        "Answer": true,
+        "Runtime": "3.7937ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "062",
+        "StartTime": "1.1173ms",
+        "Output": 127035954683,
+        "Answer": true,
+        "Runtime": "144.6107ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "063",
+        "StartTime": "0.7819ms",
+        "Output": 49,
+        "Answer": true,
+        "Runtime": "0.0709ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "064",
+        "StartTime": "1.3128ms",
+        "Output": 1322,
+        "Answer": true,
+        "Runtime": "11.4958ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "065",
+        "StartTime": "1.6943ms",
+        "Output": 272,
+        "Answer": true,
+        "Runtime": "0.1400ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "066",
+        "StartTime": "2.0920ms",
+        "Output": 661,
+        "Answer": true,
+        "Runtime": "21.2930ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "067",
+        "StartTime": "1.3316ms",
+        "Output": 7273,
+        "Answer": true,
+        "Runtime": "1.2078ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "068",
+        "StartTime": "1.2203ms",
+        "Output": 6531031914842725,
+        "Answer": true,
+        "Runtime": "550.8848ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "069",
+        "StartTime": "1.1092ms",
+        "Output": 510510,
+        "Answer": true,
+        "Runtime": "20671.3046ms",
+        "threadId": 2
+    },
+    {
+        "Problem": "070",
+        "StartTime": "20.7396ms",
+        "Output": 8319823,
+        "Answer": true,
+        "Runtime": "2265.3741ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "071",
+        "StartTime": "0.8587ms",
+        "Output": 428570,
+        "Answer": true,
+        "Runtime": "0.0556ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "072",
+        "StartTime": "1.4150ms",
+        "Output": 303963552391,
+        "Answer": true,
+        "Runtime": "73.2233ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "073",
+        "StartTime": "0.8000ms",
+        "Output": 7295372,
+        "Answer": true,
+        "Runtime": "82.9643ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "074",
+        "StartTime": "1.2142ms",
+        "Output": 402,
+        "Answer": true,
+        "Runtime": "5324.3438ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "075",
+        "StartTime": "20.9052ms",
+        "Output": 161667,
+        "Answer": true,
+        "Runtime": "59.1077ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "076",
+        "StartTime": "0.9507ms",
+        "Output": 190569291,
+        "Answer": true,
+        "Runtime": "0.3236ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "077",
+        "StartTime": "0.9215ms",
+        "Output": 71,
+        "Answer": true,
+        "Runtime": "4.5847ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "078",
+        "StartTime": "4.0246ms",
+        "Output": 55374,
+        "Answer": true,
+        "Runtime": "2340.9836ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "079",
+        "StartTime": "0.8243ms",
+        "Output": 73162890,
+        "Answer": true,
+        "Runtime": "0.4540ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "080",
+        "StartTime": "1.9260ms",
+        "Output": 40886,
+        "Answer": true,
+        "Runtime": "20.3337ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "081",
+        "StartTime": "1.1953ms",
+        "Output": 427337,
+        "Answer": true,
+        "Runtime": "7.0204ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "082",
+        "StartTime": "5.2552ms",
+        "Output": 260324,
+        "Answer": true,
+        "Runtime": "11.3655ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "083",
+        "StartTime": "1.7707ms",
+        "Answer": "425185",
+        "Runtime": "0.0600ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "084",
+        "StartTime": "2.9884ms",
+        "Answer": "101524",
+        "Runtime": "0.0326ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "085",
+        "StartTime": "0.8241ms",
+        "Output": 2772,
+        "Answer": true,
+        "Runtime": "0.3913ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "086",
+        "StartTime": "0.7739ms",
+        "Answer": "1818",
+        "Runtime": "5.6777ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "087",
+        "StartTime": "2.3299ms",
+        "Output": 1097343,
+        "Answer": true,
+        "Runtime": "12515.8574ms",
+        "threadId": 8
+    },
+    {
+        "Problem": "088",
+        "StartTime": "0.8980ms",
+        "Answer": "7587457",
+        "Runtime": "0.0452ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "089",
+        "StartTime": "1.3257ms",
+        "Answer": "743",
+        "Runtime": "0.0311ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "090",
+        "StartTime": "1.0002ms",
+        "Output": 1217,
+        "Answer": true,
+        "Runtime": "11.0984ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "091",
+        "StartTime": "0.8305ms",
+        "Output": 14234,
+        "Answer": true,
+        "Runtime": "59.5260ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "092",
+        "StartTime": "3.2281ms",
+        "Output": 8581146,
+        "Answer": true,
+        "Runtime": "5212.8538ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "093",
+        "StartTime": "0.8265ms",
+        "Output": 1258,
+        "Answer": true,
+        "Runtime": "35.2348ms",
+        "threadId": 1
+    },
+    {
+        "Problem": "094",
+        "StartTime": "0.9857ms",
+        "Answer": "518408346",
+        "Runtime": "0.0501ms",
+        "threadId": 1
+    },
+    {
+        "Problem": "095",
+        "StartTime": "0.9755ms",
+        "Output": 14316,
+        "Answer": true,
+        "Runtime": "3688.9175ms",
+        "threadId": 1
+    },
+    {
+        "Problem": "096",
+        "StartTime": "1.0758ms",
+        "Output": 24702,
+        "Answer": true,
+        "Runtime": "306.6413ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "097",
+        "StartTime": "0.9991ms",
+        "Output": 8739992577,
+        "Answer": true,
+        "Runtime": "3.7897ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "098",
+        "StartTime": "3.7087ms",
+        "Output": 18769,
+        "Answer": true,
+        "Runtime": "45.8757ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "099",
+        "StartTime": "1.0057ms",
+        "Output": 709,
+        "Answer": true,
+        "Runtime": "3.0708ms",
+        "threadId": 3
+    },
+    {
+        "Problem": "100",
+        "StartTime": "0.9148ms",
+        "Answer": "756872327473",
+        "Runtime": "0.0315ms",
+        "threadId": 3
+    }
+]
