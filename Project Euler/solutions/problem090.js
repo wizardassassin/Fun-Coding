@@ -36,6 +36,67 @@ Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
 This does not apply to the solution/code.
 */
 
+const vals = [
+    [0, 1],
+    [0, 4],
+    [0, 9],
+    [1, 6],
+    [2, 5],
+    [3, 6],
+    [4, 9],
+    [6, 4],
+    [8, 1],
+];
+
+const equ = [
+    [6, 9],
+];
+
+const def = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const siz = def.length;
+const r = 6;
+
 export default function problem90(n = -1) {
-    
+    let store = [];
+    (function gen(arr, ind, len) {
+        if (len == r) {
+            store.push(arr);
+            return;
+        }
+        while (siz - ind + len >= r) {
+            gen([...arr, def[ind]], ind + 1, len + 1);
+            ind++;
+        }
+    })([], 0, 0);
+    store = store.map(x => {
+        let ret = new Set(x);
+        for (const [a, b] of equ) {
+            if (ret.has(a)) {
+                ret.add(b);
+            }
+            if (ret.has(b)) {
+                ret.add(a);
+            }
+        }
+        return ret;
+    });
+    let len = store.length;
+    let sum = 0;
+    for (let i = 0; i < len; i++) {
+        for (let j = i + 1; j < len; j++) {
+            if (canDisplay(store[i], store[j])) {
+                sum++;
+            }
+        }
+    }
+    return sum;
+}
+
+function canDisplay(set1, set2) {
+    for (let [f, s] of vals) {
+        if (!((set1.has(f) && set2.has(s)) || (set2.has(f) && set1.has(s)))) {
+            return false;
+        }
+    }
+    return true;
 }
