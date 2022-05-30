@@ -6,62 +6,132 @@
 using namespace std;
 using namespace chrono;
 
-/**
- * @brief Merges two sorted arrays into one combined sorted array.
- * len1 + len2 = len3.
- *
- * @param arr1 First array to merge with
- * @param arr2 Second array to merge with
- * @param arr3 Array to merge into
- * @param len1 Length of the first array
- * @param len2 Length of the second array
- * @param len3 Length of the third array
- */
-void mergeHelper(vector<int>& arr1, vector<int>& arr2, vector<int>& arr3,
-                 int len1, int len2, int len3) {
-    int i = 0;
-    int j = 0;
-    int k = 0;
-    while (i < len1 && j < len2) {
-        int first = arr1[i];
-        int second = arr2[j];
-        if (first < second) {
-            arr3[k++] = first;
-            i++;
+// TODO: Maybe make it possible to pass in an array of array creating functions.
+// TODO: Maybe change the output format.
+// TODO: Implement the functions at around line 265.
+
+void quickSortHelper(vector<int>& arr, int start, int end) {
+    if (start >= end) {
+        return;
+    }
+    int realStart = start;
+    int realEnd = end;
+    int mid = (start + end) / 2;
+    if (arr[mid] < arr[start]) {
+        swap(arr[start], arr[mid]);
+    }
+    if (arr[end] < arr[start]) {
+        swap(arr[start], arr[end]);
+    }
+    if (arr[mid] < arr[end]) {
+        swap(arr[mid], arr[end]);
+    }
+    int pivot = arr[end];
+    while (start < end) {
+        if (arr[start] > pivot) {
+            arr[end] = arr[start];
+            arr[start] = arr[end - 1];
+            end--;
         } else {
-            arr3[k++] = second;
-            j++;
+            start++;
         }
     }
-    while (i < len1) {
-        int first = arr1[i];
-        arr3[k++] = first;
-        i++;
-    }
-    while (j < len2) {
-        int second = arr2[j];
-        arr3[k++] = second;
-        j++;
+    arr[end] = pivot;
+    quickSortHelper(arr, realStart, end - 1);
+    quickSortHelper(arr, end + 1, realEnd);
+}
+
+void quickSort(vector<int>& arr, int len) {
+    quickSortHelper(arr, 0, len - 1);
+}
+
+/**
+ * @brief Sorts an array using gnome sort.
+ *
+ * @param arr Array to sort
+ * @param len Length of the array
+ */
+void gnomeSort(vector<int>& arr, int len) {
+    int i = 0;
+    while (i < len) {
+        if (i == 0 || arr[i] >= arr[i - 1]) {
+            i++;
+        } else {
+            swap(arr[i], arr[i - 1]);
+            i--;
+        }
     }
 }
 
 /**
- * @brief Sorts an array using an iterative implimentation of merge sort.
+ * @brief Sorts an array using bubble sort.
+ *
+ * @param arr Array to sort
+ * @param len Length of the array
+ */
+void bubbleSort(vector<int>& arr, int len) {
+    bool swapped;
+    do {
+        swapped = false;
+        for (int i = 1; i < len; i++) {
+            if (arr[i - 1] > arr[i]) {
+                swap(arr[i - 1], arr[i]);
+                swapped = true;
+            }
+        }
+        len--;
+    } while (swapped);
+}
+
+void mergeHelper(vector<int>& arr, int start1, int end1, int start2, int end2) {
+    vector<int> arr2(arr.begin() + start1, arr.begin() + end2 + 1);
+    int i = 0;
+    int len1 = end1 - start1;
+    int j = len1 + 1;
+    int len2 = end2 - start1;
+    int k = start1;
+    while (i <= len1 && j <= len2) {
+        int first = arr2[i];
+        int second = arr2[j];
+        if (first < second) {
+            arr[k++] = first;
+            i++;
+        } else {
+            arr[k++] = second;
+            j++;
+        }
+    }
+    while (i <= len1) {
+        int first = arr2[i];
+        arr[k++] = first;
+        i++;
+    }
+    while (j <= len2) {
+        int second = arr2[j];
+        arr[k++] = second;
+        j++;
+    }
+}
+
+void mergeSortHelper(vector<int>& arr, int start, int end) {
+    if (start >= end) {
+        return;
+    }
+    int mid = (start + end) / 2;
+    mergeSortHelper(arr, start, mid);
+    mergeSortHelper(arr, mid + 1, end);
+    mergeHelper(arr, start, mid, mid + 1, end);
+}
+
+/**
+ * @brief Sorts an array using an iterative implementation of merge sort.
  * 70% familiarity.
  *
  * @param arr Array to sort
  * @param len Length of the array
  */
 void mergeSort(vector<int>& arr, int len) {
-    if (len <= 1) {
-        return;
-    }
-    int half = len / 2;
-    vector<int> firstHalf(arr.begin(), arr.begin() + half);
-    vector<int> secondHalf(arr.begin() + half, arr.end());
-    mergeSort(firstHalf, half);
-    mergeSort(secondHalf, len - half);
-    mergeHelper(firstHalf, secondHalf, arr, half, len - half, len);
+    mergeSortHelper(arr, 0, len - 1);
 }
 
 /**
@@ -108,6 +178,37 @@ void selectionSort(vector<int>& arr, int len) {
 }
 
 /**
+ * @brief
+ *
+ * @param a
+ * @param b
+ * @return int
+ */
+int compare(const void* a, const void* b) {
+    return (*(int*)a - *(int*)b);
+}
+
+/**
+ * @brief Sorts an array using the built in quick sort function.
+ *
+ * @param arr Array to sort
+ * @param len Length of the array
+ */
+void builtInQuickSort(vector<int>& arr, int len) {
+    qsort(&arr[0], arr.size(), sizeof(int), compare);
+}
+
+/**
+ * @brief Sorts an array using the built in sort function.
+ *
+ * @param arr Array to sort
+ * @param len Length of the array
+ */
+void builtInSort(vector<int>& arr, int len) {
+    sort(arr.begin(), arr.end());
+}
+
+/**
  * @brief Fills an array with random ints.
  *
  * @param arr Array to fill
@@ -115,11 +216,12 @@ void selectionSort(vector<int>& arr, int len) {
  * @param max Max int to fill
  */
 void randomArr(vector<int>& arr, int min, int max) {
-    default_random_engine generator;
+    random_device rd;
+    mt19937 mt(rd());
     uniform_int_distribution<int> distribution(min, max);
     int len = arr.size();
     for (int i = 0; i < len; i++) {
-        arr[i] = distribution(generator);
+        arr[i] = distribution(mt);
     }
 }
 
@@ -147,6 +249,28 @@ void descendingArr(vector<int>& arr) {
     for (int i = 0; i < len; i++) {
         arr[i] = len - 1 - i;
     }
+}
+
+/**
+ * @brief Fills an array with ints of value val.
+ *
+ * @param arr Array to fill
+ * @param val Value to use
+ */
+void repeatingArr(vector<int>& arr, int val) {
+    int len = arr.size();
+    for (int i = 0; i < len; i++) {
+        arr[i] = val;
+    }
+}
+
+void almostRandomArr(vector<int>& arr, int len) {
+}
+
+void almostIncreasingArr(vector<int>& arr, int) {
+}
+
+void almostDecreasingArr(vector<int>& arr, int len) {
 }
 
 /**
@@ -195,17 +319,15 @@ bool isDecreasing(vector<int>& arr) {
 }
 
 /**
- * @brief Validates the user written sorting methods.
+ * @brief Validates sorting methods.
  *
  * @param sorts Array of name-function pairs to validate
- * @return bool
  */
-bool validateSorts(
+void validateSorts(
     vector<pair<string, function<void(vector<int>&, int)>>>& sorts) {
     int testLen = 100;
     int minVal = 0;
     int maxVal = 10000;
-    bool isValid = true;
 
     vector<int> testArr(testLen);
     randomArr(testArr, minVal, maxVal);
@@ -216,8 +338,14 @@ bool validateSorts(
     int sortsLen = sorts.size();
     for (int i = 0; i < sortsLen; i++) {
         vector<int> resultArr(testArr.begin(), testArr.end());
-        string sortname = sorts[i].first;
-        cout << sortname << ": ";
+
+        // vector<int> resultArr(testLen);
+        // randomArr(resultArr, minVal, maxVal);
+        // vector<int> expectedArr(resultArr.begin(), resultArr.end());
+        // sort(expectedArr.begin(), expectedArr.end());
+
+        string sortName = sorts[i].first;
+        cout << sortName << ": ";
         sorts[i].second(resultArr, testLen);
         if (resultArr == expectedArr) {
             cout << "Passed";
@@ -231,10 +359,13 @@ bool validateSorts(
         }
         cout << "\n";
     }
-
-    return isValid;
 }
 
+/**
+ * @brief Times sorting methods.
+ *
+ * @param sorts Array of name-function pairs to time
+ */
 void timeSorts(vector<pair<string, function<void(vector<int>&, int)>>>& sorts) {
     int testLen = 100000;
     int minVal = 0;
@@ -247,9 +378,13 @@ void timeSorts(vector<pair<string, function<void(vector<int>&, int)>>>& sorts) {
     int sortsLen = sorts.size();
     for (int i = 0; i < sortsLen; i++) {
         vector<int> tempArr(testArr.begin(), testArr.end());
-        string sortname = sorts[i].first;
+
+        // vector<int> tempArr(testLen);
+        // randomArr(tempArr, minVal, maxVal);
+
+        string sortName = sorts[i].first;
         function<void(vector<int>&, int)> sortFunct = sorts[i].second;
-        cout << sortname << ": ";
+        cout << sortName << ": ";
 
         auto start = steady_clock::now();
         sortFunct(tempArr, testLen);
@@ -278,15 +413,20 @@ int main(int argc, char const* argv[]) {
 
     cout << setprecision(4) << fixed;
 
-    vector<pair<string, function<void(vector<int>&, int)>>> sorts = {
-        pair("Merge Sort", mergeSort),
-        pair("Insertion Sort", insertionSort),
-        pair("Selection Sort", selectionSort),
-    };
-
     int testLen = 100000;
     int minVal = 0;
     int maxVal = 100000000;
+
+    vector<pair<string, function<void(vector<int>&, int)>>> sorts = {
+        pair("Insertion Sort", insertionSort),
+        pair("Selection Sort", selectionSort),
+        pair("Bubble Sort", bubbleSort),
+        pair("Gnome Sort", gnomeSort),
+        pair("Quick Sort", quickSort),
+        pair("Merge Sort", mergeSort),
+        pair("Built in Sort", builtInSort),
+        pair("Built in Quick Sort", builtInQuickSort),
+    };
 
     cout << "Sorting Algorithm Validation & Timings:\n";
     cout << "\n";
