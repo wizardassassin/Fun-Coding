@@ -1,12 +1,16 @@
-xnorGate
-+===+===+===+
-| a | b | q |
-+===+===+===+
-| 0 | 0 | 1 |
-+---+---+---+
-| 0 | 1 | 0 |
-+---+---+---+
-| 1 | 0 | 0 |
-+---+---+---+
-| 1 | 1 | 1 |
-+---+---+---+
+Sorting Algorithm Validation & Timings:
+
+Configuration:
+Array Length: 100000
+Minimum Value: 0
+Maximum Value: 100000000
+
+Validation:
+Merge Sort: Passed
+Insertion Sort: Passed
+Selection Sort: Passed
+
+Timings:
+Merge Sort: 269.0647 ms
+Insertion Sort: 4887.5800 ms
+Selection Sort: 7042.7871 ms
