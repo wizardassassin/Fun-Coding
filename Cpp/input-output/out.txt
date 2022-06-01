@@ -1,16 +1,171 @@
 Sorting Algorithm Validation & Timings:
 
+
 Configuration:
 Array Length: 100000
 Minimum Value: 0
 Maximum Value: 100000000
 
+
 Validation:
-Merge Sort: Passed
 Insertion Sort: Passed
 Selection Sort: Passed
+Bubble Sort: Passed
+Gnome Sort: Passed
+Quick Sort: Passed
+Merge Sort: Passed
+Built in Sort: Passed
+Built in Quick Sort: Passed
+
 
 Timings:
-Merge Sort: 269.0647 ms
-Insertion Sort: 4887.5800 ms
-Selection Sort: 7042.7871 ms
+--Random Array--
+Insertion Sort: 842.2095 ms
+Selection Sort: 1875.4005 ms
+Bubble Sort: 17933.9864 ms
+Gnome Sort: 13077.6848 ms
+Quick Sort: 6.3512 ms
+Merge Sort: 11.8953 ms
+Built in Sort: 4.1669 ms
+Built in Quick Sort: 7.8251 ms
+
+--Increasing Array--
+Insertion Sort: 834.7035 ms
+Selection Sort: 1873.3616 ms
+Bubble Sort: 11819.5678 ms
+Gnome Sort: 13012.1577 ms
+Quick Sort: 5.6531 ms
+Merge Sort: 7.3537 ms
+Built in Sort: 3.6451 ms
+Built in Quick Sort: 7.2231 ms
+
+--Decreasing Array--
+Insertion Sort: 838.4873 ms
+Selection Sort: 1881.2856 ms
+Bubble Sort: 11877.6225 ms
+Gnome Sort: 13026.0464 ms
+Quick Sort: 5.6996 ms
+Merge Sort: 7.4505 ms
+Built in Sort: 3.7317 ms
+Built in Quick Sort: 7.2581 ms
+
+--Linear Increasing Array--
+Insertion Sort: 0.1913 ms
+Selection Sort: 1911.4992 ms
+Bubble Sort: 0.0579 ms
+Gnome Sort: 0.1107 ms
+Quick Sort: 1.4648 ms
+Merge Sort: 6.9419 ms
+Built in Sort: 0.7141 ms
+Built in Quick Sort: 2.4138 ms
+
+--Linear Decreasing Array--
+Insertion Sort: 1665.4088 ms
+Selection Sort: 1826.4462 ms
+Bubble Sort: 21296.6950 ms
+Gnome Sort: 26067.4273 ms
+Quick Sort: 1.7520 ms
+Merge Sort: 6.8157 ms
+Built in Sort: 0.4561 ms
+Built in Quick Sort: 2.4990 ms
+
+--Repeating Array--
+Insertion Sort: 0.1902 ms
+Selection Sort: 1915.4992 ms
+Bubble Sort: 0.0605 ms
+Gnome Sort: 0.1128 ms
+Quick Sort: 0.0999 ms
+Merge Sort: 6.7287 ms
+Built in Sort: 0.5880 ms
+Built in Quick Sort: 0.2312 ms
+
+--Almost Random Array--
+Insertion Sort: 832.8858 ms
+Selection Sort: 1872.0409 ms
+Bubble Sort: 17919.6576 ms
+Gnome Sort: 13049.7794 ms
+Quick Sort: 6.4091 ms
+Merge Sort: 11.2460 ms
+Built in Sort: 4.2155 ms
+Built in Quick Sort: 7.7488 ms
+
+--Almost Increasing Array--
+Insertion Sort: 831.4237 ms
+Selection Sort: 1875.1740 ms
+Bubble Sort: 17105.2520 ms
+Gnome Sort: 13030.5822 ms
+Quick Sort: 5.9649 ms
+Merge Sort: 10.2670 ms
+Built in Sort: 4.0550 ms
+Built in Quick Sort: 7.4431 ms
+
+--Almost Decreasing Array--
+Insertion Sort: 833.8740 ms
+Selection Sort: 1882.0165 ms
+Bubble Sort: 16547.5898 ms
+Gnome Sort: 13064.1101 ms
+Quick Sort: 5.9832 ms
+Merge Sort: 10.5001 ms
+Built in Sort: 4.0975 ms
+Built in Quick Sort: 7.6008 ms
+
+--Almost Linear Increasing Array--
+Insertion Sort: 287.2734 ms
+Selection Sort: 1926.1080 ms
+Bubble Sort: 7185.6872 ms
+Gnome Sort: 4483.0860 ms
+Quick Sort: 3.4334 ms
+Merge Sort: 8.1329 ms
+Built in Sort: 2.0132 ms
+Built in Quick Sort: 4.4557 ms
+
+--Almost Linear Decreasing Array--
+Insertion Sort: 1379.3666 ms
+Selection Sort: 1908.9297 ms
+Bubble Sort: 19994.6852 ms
+Gnome Sort: 21598.4903 ms
+Quick Sort: 4.5426 ms
+Merge Sort: 8.3371 ms
+Built in Sort: 2.7448 ms
+Built in Quick Sort: 5.9280 ms
+
+--Almost Repeating Array--
+Insertion Sort: 338.8855 ms
+Selection Sort: 1857.8184 ms
+Bubble Sort: 8169.4743 ms
+Gnome Sort: 5286.7594 ms
+Quick Sort: 0.4103 ms
+Merge Sort: 7.4198 ms
+Built in Sort: 0.9047 ms
+Built in Quick Sort: 0.7022 ms
+
+
+Statistics:
+Elapsed Time: 317116.3791 ms
+
+
+Sorting Methods/Array Fill Methods/Milliseconds,Passed Validation,Random Array,Increasing Array,Decreasing Array,Linear Increasing Array,Linear Decreasing Array,Repeating Array,Almost Random Array,Almost Increasing Array,Almost Decreasing Array,Almost Linear Increasing Array,Almost Linear Decreasing Array,Almost Repeating Array
+Insertion Sort,Passed,842.209500,834.703500,838.487300,0.191300,1665.408800,0.190200,832.885800,831.423700,833.874000,287.273400,1379.366600,338.885500
+Selection Sort,Passed,1875.400500,1873.361600,1881.285600,1911.499200,1826.446200,1915.499200,1872.040900,1875.174000,1882.016500,1926.108000,1908.929700,1857.818400
+Bubble Sort,Passed,17933.986400,11819.567800,11877.622500,0.057900,21296.695000,0.060500,17919.657600,17105.252000,16547.589800,7185.687200,19994.685200,8169.474300
+Gnome Sort,Passed,13077.684800,13012.157700,13026.046400,0.110700,26067.427300,0.112800,13049.779400,13030.582200,13064.110100,4483.086000,21598.490300,5286.759400
+Quick Sort,Passed,6.351200,5.653100,5.699600,1.464800,1.752000,0.099900,6.409100,5.964900,5.983200,3.433400,4.542600,0.410300
+Merge Sort,Passed,11.895300,7.353700,7.450500,6.941900,6.815700,6.728700,11.246000,10.267000,10.500100,8.132900,8.337100,7.419800
+Built in Sort,Passed,4.166900,3.645100,3.731700,0.714100,0.456100,0.588000,4.215500,4.055000,4.097500,2.013200,2.744800,0.904700
+Built in Quick Sort,Passed,7.825100,7.223100,7.258100,2.413800,2.499000,0.231200,7.748800,7.443100,7.600800,4.455700,5.928000,0.702200
+
+
+Sorting Methods/Array Fill Methods/Milliseconds,Insertion Sort,Selection Sort,Bubble Sort,Gnome Sort,Quick Sort,Merge Sort,Built in Sort,Built in Quick Sort
+Passed Validation,Passed,Passed,Passed,Passed,Passed,Passed,Passed,Passed
+Random Array,842.209500,1875.400500,17933.986400,13077.684800,6.351200,11.895300,4.166900,7.825100
+Increasing Array,834.703500,1873.361600,11819.567800,13012.157700,5.653100,7.353700,3.645100,7.223100
+Decreasing Array,838.487300,1881.285600,11877.622500,13026.046400,5.699600,7.450500,3.731700,7.258100
+Linear Increasing Array,0.191300,1911.499200,0.057900,0.110700,1.464800,6.941900,0.714100,2.413800
+Linear Decreasing Array,1665.408800,1826.446200,21296.695000,26067.427300,1.752000,6.815700,0.456100,2.499000
+Repeating Array,0.190200,1915.499200,0.060500,0.112800,0.099900,6.728700,0.588000,0.231200
+Almost Random Array,832.885800,1872.040900,17919.657600,13049.779400,6.409100,11.246000,4.215500,7.748800
+Almost Increasing Array,831.423700,1875.174000,17105.252000,13030.582200,5.964900,10.267000,4.055000,7.443100
+Almost Decreasing Array,833.874000,1882.016500,16547.589800,13064.110100,5.983200,10.500100,4.097500,7.600800
+Almost Linear Increasing Array,287.273400,1926.108000,7185.687200,4483.086000,3.433400,8.132900,2.013200,4.455700
+Almost Linear Decreasing Array,1379.366600,1908.929700,19994.685200,21598.490300,4.542600,8.337100,2.744800,5.928000
+Almost Repeating Array,338.885500,1857.818400,8169.474300,5286.759400,0.410300,7.419800,0.904700,0.702200
