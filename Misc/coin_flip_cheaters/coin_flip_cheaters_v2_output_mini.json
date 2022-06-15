@@ -1,0 +1,149 @@
+[
+    {
+        "flips": 0,
+        "susAcc": 0.6666666666666666,
+        "useAcc": 0.5,
+        "susMargin": -0.16666666666666663,
+        "isSus": false
+    },
+    {
+        "flips": 1,
+        "susAcc": 0.6818181818181818,
+        "useAcc": 0.625,
+        "susMargin": -0.05681818181818177,
+        "isSus": false
+    },
+    {
+        "flips": 2,
+        "susAcc": 0.6976744186046512,
+        "useAcc": 0.65625,
+        "susMargin": -0.04142441860465118,
+        "isSus": false
+    },
+    {
+        "flips": 3,
+        "susAcc": 0.7142857142857143,
+        "useAcc": 0.671875,
+        "susMargin": -0.0424107142857143,
+        "isSus": false
+    },
+    {
+        "flips": 4,
+        "susAcc": 0.7317073170731707,
+        "useAcc": 0.712890625,
+        "susMargin": -0.018816692073170715,
+        "isSus": false
+    },
+    {
+        "flips": 5,
+        "susAcc": 0.75,
+        "useAcc": 0.72265625,
+        "susMargin": -0.02734375,
+        "isSus": false
+    },
+    {
+        "flips": 6,
+        "susAcc": 0.7692307692307693,
+        "useAcc": 0.743408203125,
+        "susMargin": -0.025822566105769273,
+        "isSus": false
+    },
+    {
+        "flips": 7,
+        "susAcc": 0.7894736842105263,
+        "useAcc": 0.764923095703125,
+        "susMargin": -0.024550588507401327,
+        "isSus": false
+    },
+    {
+        "flips": 8,
+        "susAcc": 0.8108108108108109,
+        "useAcc": 0.7670059204101562,
+        "susMargin": -0.043804890400654606,
+        "isSus": false
+    },
+    {
+        "flips": 9,
+        "susAcc": 0.8333333333333334,
+        "useAcc": 0.7901840209960938,
+        "susMargin": -0.04314931233723962,
+        "isSus": false
+    },
+    {
+        "flips": 10,
+        "susAcc": 0.8571428571428571,
+        "useAcc": 0.8020000457763672,
+        "susMargin": -0.05514281136648991,
+        "isSus": false
+    },
+    {
+        "flips": 11,
+        "susAcc": 0.8823529411764706,
+        "useAcc": 0.8054797649383545,
+        "susMargin": -0.07687317623811607,
+        "isSus": false
+    },
+    {
+        "flips": 12,
+        "susAcc": 0.9090909090909091,
+        "useAcc": 0.8242543339729309,
+        "susMargin": -0.08483657511797815,
+        "isSus": false
+    },
+    {
+        "flips": 13,
+        "susAcc": 0.9375,
+        "useAcc": 0.8302695229649544,
+        "susMargin": -0.10723047703504562,
+        "isSus": false
+    },
+    {
+        "flips": 14,
+        "susAcc": 0.967741935483871,
+        "useAcc": 0.8381779659539461,
+        "susMargin": -0.12956396952992488,
+        "isSus": false
+    },
+    {
+        "flips": 15,
+        "susAcc": 1,
+        "useAcc": 0.8503765081986785,
+        "susMargin": -0.1496234918013215,
+        "isSus": false
+    },
+    {
+        "flips": 16,
+        "susAcc": 1.0344827586206897,
+        "useAcc": 0.8526443323353305,
+        "susMargin": -0.18183842628535918,
+        "isSus": false
+    },
+    {
+        "flips": 17,
+        "susAcc": 1.0714285714285714,
+        "useAcc": 0.8633827319135889,
+        "susMargin": -0.20804583951498246,
+        "isSus": false
+    },
+    {
+        "flips": 18,
+        "susAcc": 1.1111111111111112,
+        "useAcc": 0.871036478143651,
+        "susMargin": -0.24007463296746012,
+        "isSus": false
+    },
+    {
+        "flips": 19,
+        "susAcc": 1.1538461538461537,
+        "useAcc": 0.8714505475654732,
+        "susMargin": -0.2823956062806805,
+        "isSus": false
+    },
+    {
+        "flips": 20,
+        "susAcc": 1.2,
+        "useAcc": 0.8833000804497715,
+        "susMargin": -0.31669991955022847,
+        "isSus": false
+    }
+]

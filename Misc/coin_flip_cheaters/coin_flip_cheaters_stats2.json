@@ -1,0 +1,216 @@
+{
+    "fairOutput": [
+        {
+            "index": 1,
+            "sustainAccuracy": 0.6818181818181818,
+            "usageAccuracy": 1,
+            "profitIfCorrect": 0.31818181818181823,
+            "maxBeforeCheat": -1
+        },
+        {
+            "index": 2,
+            "sustainAccuracy": 0.6976744186046512,
+            "usageAccuracy": 0.7501059999999999,
+            "profitIfCorrect": 0.05243158139534876,
+            "maxBeforeCheat": 0
+        },
+        {
+            "index": 3,
+            "sustainAccuracy": 0.7142857142857143,
+            "usageAccuracy": 0.875318,
+            "profitIfCorrect": 0.16103228571428574,
+            "maxBeforeCheat": 0
+        },
+        {
+            "index": 4,
+            "sustainAccuracy": 0.7317073170731707,
+            "usageAccuracy": 0.937413,
+            "profitIfCorrect": 0.20570568292682934,
+            "maxBeforeCheat": 0
+        },
+        {
+            "index": 5,
+            "sustainAccuracy": 0.75,
+            "usageAccuracy": 0.81265,
+            "profitIfCorrect": 0.06264999999999998,
+            "maxBeforeCheat": 1
+        },
+        {
+            "index": 6,
+            "sustainAccuracy": 0.7692307692307692,
+            "usageAccuracy": 0.890699,
+            "profitIfCorrect": 0.12146823076923086,
+            "maxBeforeCheat": 1
+        },
+        {
+            "index": 7,
+            "sustainAccuracy": 0.7894736842105263,
+            "usageAccuracy": 0.9375230000000001,
+            "profitIfCorrect": 0.14804931578947378,
+            "maxBeforeCheat": 1
+        },
+        {
+            "index": 8,
+            "sustainAccuracy": 0.8108108108108109,
+            "usageAccuracy": 0.8553540000000001,
+            "profitIfCorrect": 0.0445431891891892,
+            "maxBeforeCheat": 2
+        },
+        {
+            "index": 9,
+            "sustainAccuracy": 0.8333333333333334,
+            "usageAccuracy": 0.910101,
+            "profitIfCorrect": 0.07676766666666668,
+            "maxBeforeCheat": 2
+        },
+        {
+            "index": 10,
+            "sustainAccuracy": 0.8571428571428571,
+            "usageAccuracy": 0.945235,
+            "profitIfCorrect": 0.08809214285714295,
+            "maxBeforeCheat": 2
+        },
+        {
+            "index": 11,
+            "sustainAccuracy": 0.8823529411764706,
+            "usageAccuracy": 0.886731,
+            "profitIfCorrect": 0.004378058823529485,
+            "maxBeforeCheat": 3
+        },
+        {
+            "index": 12,
+            "sustainAccuracy": 0.9090909090909091,
+            "usageAccuracy": 0.926964,
+            "profitIfCorrect": 0.01787309090909095,
+            "maxBeforeCheat": 3
+        },
+        {
+            "index": 13,
+            "sustainAccuracy": 0.9375,
+            "usageAccuracy": 0.953809,
+            "profitIfCorrect": 0.016309000000000018,
+            "maxBeforeCheat": 3
+        },
+        {
+            "index": 14,
+            "sustainAccuracy": 0.967741935483871,
+            "usageAccuracy": 0.9711829999999999,
+            "profitIfCorrect": 0.003441064516128911,
+            "maxBeforeCheat": 3
+        },
+        {
+            "index": 15,
+            "sustainAccuracy": null,
+            "usageAccuracy": 1,
+            "profitIfCorrect": null,
+            "maxBeforeCheat": -1
+        }
+    ],
+    "cheatOutput": [
+        {
+            "index": 1,
+            "sustainAccuracy": 0.6818181818181818,
+            "usageAccuracy": 0.7492840000000001,
+            "profitIfCorrect": 0.0674658181818183,
+            "maxBeforeCheat": 0
+        },
+        {
+            "index": 2,
+            "sustainAccuracy": 0.6976744186046512,
+            "usageAccuracy": 0.937292,
+            "profitIfCorrect": 0.23961758139534883,
+            "maxBeforeCheat": 0
+        },
+        {
+            "index": 3,
+            "sustainAccuracy": 0.7142857142857143,
+            "usageAccuracy": 0.844063,
+            "profitIfCorrect": 0.1297772857142857,
+            "maxBeforeCheat": 1
+        },
+        {
+            "index": 4,
+            "sustainAccuracy": 0.7317073170731707,
+            "usageAccuracy": 0.7383010000000001,
+            "profitIfCorrect": 0.006593682926829381,
+            "maxBeforeCheat": 2
+        },
+        {
+            "index": 5,
+            "sustainAccuracy": 0.75,
+            "usageAccuracy": 0.896933,
+            "profitIfCorrect": 0.14693299999999998,
+            "maxBeforeCheat": 2
+        },
+        {
+            "index": 6,
+            "sustainAccuracy": 0.7692307692307692,
+            "usageAccuracy": 0.830906,
+            "profitIfCorrect": 0.06167523076923087,
+            "maxBeforeCheat": 3
+        },
+        {
+            "index": 7,
+            "sustainAccuracy": 0.7894736842105263,
+            "usageAccuracy": 0.929954,
+            "profitIfCorrect": 0.14048031578947362,
+            "maxBeforeCheat": 3
+        },
+        {
+            "index": 8,
+            "sustainAccuracy": 0.8108108108108109,
+            "usageAccuracy": 0.886727,
+            "profitIfCorrect": 0.07591618918918919,
+            "maxBeforeCheat": 4
+        },
+        {
+            "index": 9,
+            "sustainAccuracy": 0.8333333333333334,
+            "usageAccuracy": 0.8347800000000001,
+            "profitIfCorrect": 0.0014466666666667072,
+            "maxBeforeCheat": 5
+        },
+        {
+            "index": 10,
+            "sustainAccuracy": 0.8571428571428571,
+            "usageAccuracy": 0.9221790000000001,
+            "profitIfCorrect": 0.06503614285714299,
+            "maxBeforeCheat": 5
+        },
+        {
+            "index": 11,
+            "sustainAccuracy": 0.8823529411764706,
+            "usageAccuracy": 0.8856229999999999,
+            "profitIfCorrect": 0.003270058823529376,
+            "maxBeforeCheat": 6
+        },
+        {
+            "index": 12,
+            "sustainAccuracy": 0.9090909090909091,
+            "usageAccuracy": 0.9460899999999999,
+            "profitIfCorrect": 0.036999090909090815,
+            "maxBeforeCheat": 6
+        },
+        {
+            "index": 13,
+            "sustainAccuracy": 0.9375,
+            "usageAccuracy": 0.9759829999999999,
+            "profitIfCorrect": 0.038482999999999934,
+            "maxBeforeCheat": 6
+        },
+        {
+            "index": 14,
+            "sustainAccuracy": 0.967741935483871,
+            "usageAccuracy": 0.9898210000000002,
+            "profitIfCorrect": 0.022079064516129177,
+            "maxBeforeCheat": 6
+        },
+        {
+            "index": 15,
+            "sustainAccuracy": null,
+            "usageAccuracy": 1,
+            "profitIfCorrect": null,
+            "maxBeforeCheat": -1
+        }
+    ]
+}
