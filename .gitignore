@@ -169,3 +169,6 @@ hs_err_pid*
 # Test files
 .test/
 .test.*
+
+# Spigot BuidTools
+SpigotBuildTools/
