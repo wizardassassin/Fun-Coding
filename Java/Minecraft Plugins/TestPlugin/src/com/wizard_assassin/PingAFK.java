@@ -63,7 +63,7 @@ public class PingAFK implements Listener {
                             return;
                         }
                         Long lastAFK = afkTimes.get(uuid);
-                        Boolean isAFK = endPing - lastAFK > 60000;
+                        Boolean isAFK = endPing - lastAFK >= 300000;
                         tablistDisplay(player, totalPing, isAFK);
                     }
                 });
@@ -96,7 +96,7 @@ public class PingAFK implements Listener {
         UUID uuid = player.getUniqueId();
         Long lLastMove = afkTimes.get(uuid);
         afkTimes.put(uuid, lastMove);
-        Boolean wasAFK = lastMove - lLastMove > 60000;
+        Boolean wasAFK = lastMove - lLastMove >= 300000;
         if (wasAFK) {
             // plugin.getLogger().info(player.getPlayerListName());
             String format = player.getPlayerListName();
