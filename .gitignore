@@ -169,6 +169,8 @@ hs_err_pid*
 # Test files
 .test/
 .test.*
+.hide.*
+.hide/
 
 # Spigot BuidTools
 SpigotBuildTools/
