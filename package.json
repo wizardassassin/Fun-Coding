@@ -21,9 +21,9 @@
   "homepage": "https://github.com/wizardassassin/Fun-Coding#readme",
   "type": "module",
   "dependencies": {
-    "decimal.js": "^10.2.1",
+    "decimal.js": "^10.3.1",
     "lodash": "^4.17.21",
-    "mathjs": "^9.3.0",
-    "node-fetch": "^3.1.0"
+    "mathjs": "^10.6.4",
+    "node-fetch": "^3.2.8"
   }
 }

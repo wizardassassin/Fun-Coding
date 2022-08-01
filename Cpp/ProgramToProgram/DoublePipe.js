@@ -13,7 +13,7 @@ const runBuild = true;
 const runTimes = 10;
 
 const logOutput = true;
-const logError = true;
+const logError = false;
 const logExit = false;
 
 const args = "-Og";
@@ -79,8 +79,10 @@ async function execute() {
     });
 
     programShell.stderr.on("data", (data) => {
-        // console.log(`${data.toString().trim()}`);
-        console.log(`programShell-err:\n${data.toString().trim()}`);
+        if (logError) {
+            // console.log(`${data.toString().trim()}`);
+            console.log(`programShell-err:\n${data.toString().trim()}`);
+        }
     });
 
     programShell.on("close", (code) => {
@@ -106,7 +108,9 @@ async function execute() {
     });
 
     userShell.stderr.on("data", (data) => {
-        console.log(`userShell:\n${data.toString().trim()}`);
+        if (logError) {
+            console.log(`userShell:\n${data.toString().trim()}`);
+        }
     });
 
     userShell.on("close", (code) => {
