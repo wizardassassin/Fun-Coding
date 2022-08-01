@@ -1,7 +1,1 @@
-Case #1: POSSIBLE
-1
-2 
-Case #2: POSSIBLE
-1
-3 
-Case #3: IMPOSSIBLE
+Case #1: 12.500000
