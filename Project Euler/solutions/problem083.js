@@ -22,108 +22,102 @@ This does not apply to the solution/code.
 
 import _ from "lodash";
 
-const tests = [
-    [-1, 0],
-    [0, 1],
-    [1, 0],
-    [0, -1],
-];
-const tLen = tests.length;
-let matrix;
-let row;
-let col;
-let valid;
-let ret;
+class Cell {
+    iIndex;
+    jIndex;
+    id;
+    distance;
+    heuristic;
+    compareVal;
+    prevCell;
+    static factor;
+    static parsedMatrix;
+    static addedCells = new Map();
+    constructor(iIndex, jIndex, prevCell) {
+        this.iIndex = iIndex;
+        this.jIndex = jIndex;
+        this.id = `${this.iIndex},${this.jIndex}`;
+        this.prevCell = prevCell;
+        Cell.addedCells.set(this.id, this);
 
-let tst = [
-    [false, true, false, false, false],
-    [false, false, false, true, false],
-    [true, true, true, false, false],
-    [true, true, true, false, true],
-    [true, true, true, true, true],
-];
-let cnt = -1;
-let cnt2 = 0;
+        this.distance =
+            (this.prevCell?.distance ?? 0) +
+            Cell.parsedMatrix[this.iIndex][this.jIndex];
+        const incDec = this.isGettingCloser();
+        this.heuristic = (this.prevCell?.heuristic ?? 0) + incDec;
+        this.compareVal = this.distance + this.heuristic * Cell.factor;
+    }
+    isGettingCloser() {
+        if (!this.prevCell) {
+            return 0;
+        }
+        if (
+            this.iIndex - this.prevCell.iIndex === 1 ||
+            this.jIndex - this.prevCell.jIndex === 1
+        ) {
+            return -1;
+        }
+        return 1;
+    }
+    static setHeuristic(val) {
+        this.factor = val;
+    }
+    static setMatrix(matrix) {
+        this.parsedMatrix = matrix;
+    }
+    static hasCell(iIndex, jIndex) {
+        return this.addedCells.has(`${iIndex},${jIndex}`);
+    }
+}
 
 export default function problem83(n = -1) {
-    return;
-    matrix = matrixU.split("\n").map((x) => x.split(",").map(Number));
-    // console.log(matrixP)
-    // return
-    row = matrix.length;
-    col = matrix[0].length;
-    valid = Array.from({ length: row }, () =>
-        Array.from({ length: col }, () => true)
-    );
-    ret = Infinity;
-    solve(0, 0, 0);
-    return ret[0];
-}
+    const parsedMatrix = matrix
+        .split("\n")
+        .map((x) => x.split(",").map(Number));
+    const minVal = Math.min(...parsedMatrix.flat(Infinity));
+    const rows = parsedMatrix.length;
+    const cols = parsedMatrix[0].length;
 
-function solve(i, j, val) {
-    if (++cnt % 1000000 == 0) {
-        process.stdout.write(cnt + "," + cnt2 + "\r");
-    }
-    // console.log(val);
-    // if (_.isEqual(tst, valid)) {
-    //     console.log("h");
-    // }
-    const val2 = val + matrix[i][j];
-    if (val2 >= ret) {
-        return;
-    }
-    if (i == row - 1 && j == col - 1) {
-        // console.log(val)
-        // if (val + matrix[i][j] == 2297) {
-        //     console.log("c", valid);
-        //     let sum = 0;
-        //     for (let i = 0; i < row; i++) {
-        //         for (let j = 0; j < row; j++) {
-        //             if (!valid[i][j]) {
-        //                 console.log("d", matrix[i][j]);
-        //                 sum += matrix[i][j];
-        //             }
-        //         }
-        //     }
-        //     console.log("a", sum);
-        //     console.log("b", val);
-        // }
-        ret = val2;
-        cnt2++;
-        return;
-    }
-    valid[i][j] = false;
-    const valid2 = [];
-    const next2 = [];
-    for (let a = 0; a < 4; a++) {
-        const n_i = i + tests[a][0];
-        const n_j = j + tests[a][1];
-        valid2.push(valid[n_i]?.[n_j]);
-        next2.push([n_i, n_j]);
-    }
-    if (valid2.filter((x) => x == false).length >= 2) {
-        //
-    } else if (valid2[0] && valid2[2] && !valid2[1] && !valid2[3]) {
-        solve(next2[2][0], next2[2][1], val2);
-    } else if (valid2[1] && valid2[3] && !valid2[0] && !valid2[2]) {
-        solve(next2[1][0], next2[1][1], val2);
-    } else {
-        for (let a = 0; a < tLen; a++) {
-            if (valid2[a]) {
-                solve(next2[a][0], next2[a][1], val2);
-            }
+    Cell.setHeuristic(minVal);
+    Cell.setMatrix(parsedMatrix);
+    const isValid = (iIndex, jIndex) =>
+        iIndex >= 0 && iIndex < rows && jIndex >= 0 && jIndex < cols;
+
+    const queue = [];
+    queue.push(new Cell(0, 0, undefined));
+    let currCell = queue[0];
+    while (currCell.id !== `${rows - 1},${cols - 1}`) {
+        const candidates = [
+            [currCell.iIndex - 1, currCell.jIndex],
+            [currCell.iIndex, currCell.jIndex + 1],
+            [currCell.iIndex + 1, currCell.jIndex],
+            [currCell.iIndex, currCell.jIndex - 1],
+        ].filter(
+            ([iIndex, jIndex]) =>
+                isValid(iIndex, jIndex) && !Cell.hasCell(iIndex, jIndex)
+        );
+        if (candidates.length === 0) {
+            queue.shift();
+        } else {
+            const nextIIndex = candidates[0][0];
+            const nextJIndex = candidates[0][1];
+            queue.push(new Cell(nextIIndex, nextJIndex, currCell));
         }
+        queue.sort((a, b) => a.compareVal - b.compareVal);
+        currCell = queue[0];
     }
-    valid[i][j] = true;
+    console.log(queue);
+    console.log(currCell);
+    return currCell.distance;
 }
 
-const matrixUX = `131,673,234,103,18
+const matrix2 = `131,673,234,103,18
 201,96,342,965,150
 630,803,746,422,111
 537,699,497,121,956
 805,732,524,37,331`;
 
-const matrixU = `4445,2697,5115,718,2209,2212,654,4348,3079,6821,7668,3276,8874,4190,3785,2752,9473,7817,9137,496,7338,3434,7152,4355,4552,7917,7827,2460,2350,691,3514,5880,3145,7633,7199,3783,5066,7487,3285,1084,8985,760,872,8609,8051,1134,9536,5750,9716,9371,7619,5617,275,9721,2997,2698,1887,8825,6372,3014,2113,7122,7050,6775,5948,2758,1219,3539,348,7989,2735,9862,1263,8089,6401,9462,3168,2758,3748,5870
+const matrix = `4445,2697,5115,718,2209,2212,654,4348,3079,6821,7668,3276,8874,4190,3785,2752,9473,7817,9137,496,7338,3434,7152,4355,4552,7917,7827,2460,2350,691,3514,5880,3145,7633,7199,3783,5066,7487,3285,1084,8985,760,872,8609,8051,1134,9536,5750,9716,9371,7619,5617,275,9721,2997,2698,1887,8825,6372,3014,2113,7122,7050,6775,5948,2758,1219,3539,348,7989,2735,9862,1263,8089,6401,9462,3168,2758,3748,5870
 1096,20,1318,7586,5167,2642,1443,5741,7621,7030,5526,4244,2348,4641,9827,2448,6918,5883,3737,300,7116,6531,567,5997,3971,6623,820,6148,3287,1874,7981,8424,7672,7575,6797,6717,1078,5008,4051,8795,5820,346,1851,6463,2117,6058,3407,8211,117,4822,1317,4377,4434,5925,8341,4800,1175,4173,690,8978,7470,1295,3799,8724,3509,9849,618,3320,7068,9633,2384,7175,544,6583,1908,9983,481,4187,9353,9377
 9607,7385,521,6084,1364,8983,7623,1585,6935,8551,2574,8267,4781,3834,2764,2084,2669,4656,9343,7709,2203,9328,8004,6192,5856,3555,2260,5118,6504,1839,9227,1259,9451,1388,7909,5733,6968,8519,9973,1663,5315,7571,3035,4325,4283,2304,6438,3815,9213,9806,9536,196,5542,6907,2475,1159,5820,9075,9470,2179,9248,1828,4592,9167,3713,4640,47,3637,309,7344,6955,346,378,9044,8635,7466,5036,9515,6385,9230
 7206,3114,7760,1094,6150,5182,7358,7387,4497,955,101,1478,7777,6966,7010,8417,6453,4955,3496,107,449,8271,131,2948,6185,784,5937,8001,6104,8282,4165,3642,710,2390,575,715,3089,6964,4217,192,5949,7006,715,3328,1152,66,8044,4319,1735,146,4818,5456,6451,4113,1063,4781,6799,602,1504,6245,6550,1417,1343,2363,3785,5448,4545,9371,5420,5068,4613,4882,4241,5043,7873,8042,8434,3939,9256,2187
