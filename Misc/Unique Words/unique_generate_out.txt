@@ -1,0 +1,7 @@
+Parse Time: 61.750ms
+
+Compute Time: 9.074ms
+
+Write Time: 22.991ms
+
+Elapsed Time: 93.919ms
