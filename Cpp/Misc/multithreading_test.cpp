@@ -32,7 +32,7 @@ int main(int argc, char const* argv[]) {
          << "Start"
          << "\n";
 
-    long long n = 1451822436;
+    long long n = 1451822436LL * 3;
     int threadCount = 8;
     vector<thread> threads;
     vector<long long> outputs(threadCount);
@@ -45,7 +45,7 @@ int main(int argc, char const* argv[]) {
         thread.join();
     }
 
-    int sum = 0;
+    long long sum = 0;
     for (const auto& output : outputs) {
         sum += output;
         sum %= n;
