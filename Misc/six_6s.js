@@ -1,5 +1,5 @@
 /**
- * Cavitate, the order of operations is left to right regardless of the operation
+ * Caveat, the order of operations is left to right regardless of the operation
  * There are some miniscule rounding errors
  *
  * https://puzzling.stackexchange.com/questions/97435/make-the-numbers-1-100-using-six-6s
