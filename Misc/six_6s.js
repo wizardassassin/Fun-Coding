@@ -97,7 +97,7 @@ fs.writeFileSync("test2.json", JSON.stringify(test2, null, 4));
 console.timeEnd("Write");
 
 /*
-Recurse: 13.854s
-Format: 4.102ms
-Write: 2.840s
+Recurse: 6.331s
+Format: 4.161ms
+Write: 2.460s
 */
