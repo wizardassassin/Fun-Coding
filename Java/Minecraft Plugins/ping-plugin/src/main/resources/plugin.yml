@@ -1,0 +1,6 @@
+main: com.wizard_assassin.Main
+name: PingPlugin
+version: 1.0
+api-version: 1.19
+depend: [ProtocolLib]
+description: My own ping plugin!
