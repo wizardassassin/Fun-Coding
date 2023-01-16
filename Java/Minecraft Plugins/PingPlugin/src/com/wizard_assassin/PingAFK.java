@@ -117,12 +117,15 @@ public class PingAFK implements Listener {
         if ((lastMove - lLastMove) / 1000000 < 5000) {
             return;
         }
-
         afkTimes.put(uuid, lastMove);
         Boolean wasAFK = (lastMove - lLastMove) / 1000000 >= maxAfkTime;
         if (wasAFK) {
             // plugin.getLogger().info(player.getPlayerListName());
             String format = player.getPlayerListName();
+            if (!format.endsWith(" §eAFK§r")) {
+                plugin.getLogger().warning("Unexpected PlayerListName - " + format);
+            }
+            plugin.getLogger().info(format);
             player.setPlayerListName(format.substring(0, format.lastIndexOf(" ")));
         }
     }
