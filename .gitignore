@@ -174,3 +174,6 @@ hs_err_pid*
 
 # Spigot BuidTools
 SpigotBuildTools/
+
+# Maven
+target/
