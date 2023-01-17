@@ -2,7 +2,6 @@ package com.wizard_assassin;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.text.DecimalFormat;
-import java.text.MessageFormat;
 import java.util.UUID;
 
 import org.bukkit.entity.Player;
@@ -12,6 +11,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
+import org.bukkit.scoreboard.Team;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
@@ -20,6 +20,11 @@ import com.comphenix.protocol.events.ListenerPriority;
 import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.events.PacketListener;
+
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.JoinConfiguration;
+import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.format.TextColor;
 
 public class PingAFK implements Listener {
     private Plugin plugin;
@@ -46,31 +51,41 @@ public class PingAFK implements Listener {
     }
 
     public void tablistDisplay(Player player, Double totalPing, Boolean isAFK) {
-        String name = player.getName();
-        String nameWrap = getPlayerColor(player, name);
+        Component nameComponent = getPlayerColor(player);
+
         String units = (doUnits) ? "ms" : "";
         String keepAlivePing = formatPing(totalPing);
         String keepAlivePingWrap = keepAlivePing + units;
         String vanillaPing = "" + player.getPing();
         String vanillaPingWrap = (doVanillaPing) ? "," + vanillaPing + units : "";
-        String afkString = (doAfk && isAFK) ? " §eAFK§r" : "";
-        String format = MessageFormat.format("§7[§a{0}{1}§7]§r {2}{3}", keepAlivePingWrap, vanillaPingWrap, nameWrap,
-                afkString);
-        // plugin.getLogger()
-        // .info(name + " | Ping: " + totalPing + " | isAFK: " + isAFK + " |
-        // playerPing:" + vanillaPing);
-        player.setPlayerListName(format);
+        Component pingPrefix = Component.text("[").color(NamedTextColor.GRAY);
+        Component pingSuffix = Component.text("]").color(NamedTextColor.GRAY);
+        Component pingContent = Component.text(keepAlivePingWrap + vanillaPingWrap).color(NamedTextColor.GREEN);
+        Component pingComponent = Component.empty().append(pingPrefix).append(pingContent)
+                .append(pingSuffix);
+
+        String afkString = (doAfk && isAFK) ? " AFK" : "";
+        Component afkComponent = Component.text(afkString).color(NamedTextColor.YELLOW);
+
+        JoinConfiguration formatSeperator = JoinConfiguration.separators(Component.space(), Component.empty());
+        Component formatComponent = Component.join(formatSeperator, pingComponent, nameComponent, afkComponent);
+
+        player.playerListName(formatComponent);
     }
 
-    public String getPlayerColor(Player player, String name) {
-        String colorCode = "§r";
+    public Component getPlayerColor(Player player) {
+        Component name = player.name();
         try {
-            // Vanilla team color suppport
-            colorCode = player.getScoreboard().getEntryTeam(name).getColor().toString();
+            // Vanilla team support
+            Team team = player.getScoreboard().getEntityTeam(player);
+            TextColor color = team.color();
+            Component prefix = team.prefix();
+            Component suffix = team.suffix();
+            name = Component.empty().append(prefix).append(name.color(color)).append(suffix);
         } catch (Exception e) {
             // Ignore
         }
-        return colorCode + name + "§r";
+        return name;
     }
 
     public String formatPing(Double totalPing) {
@@ -129,15 +144,6 @@ public class PingAFK implements Listener {
             return;
         }
         afkTimes.put(uuid, lastMove);
-        Boolean wasAFK = (lastMove - lLastMove) / 1000000 >= maxAfkTime;
-        if (wasAFK) {
-            // plugin.getLogger().info(player.getPlayerListName());
-            String format = player.getPlayerListName();
-            if (!format.endsWith(" §eAFK§r")) {
-                plugin.getLogger().warning("Unexpected PlayerListName - " + format);
-            }
-            player.setPlayerListName(format.substring(0, format.lastIndexOf(" ")));
-        }
     }
 
     @EventHandler
